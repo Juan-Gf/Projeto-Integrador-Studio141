@@ -1,0 +1,95 @@
+
+
+header {
+	background: #000000;
+	margin: 0 auto;
+	width: 100%;
+}
+
+header img {
+	width: 40%;
+}
+
+.caixa {
+	position: relative;
+	width: 940px;
+	padding: 20px 0;
+}
+
+nav {
+	position: absolute;
+	top: 100px;
+	left: 900px;
+}
+
+
+nav li {
+	display: inline;
+	color: white;
+	font-size: 26px;
+}
+
+.cadastro {
+	width: 940px;
+	height: 100%;
+	padding: 20px;
+	margin: 20px 75px;
+}
+
+.cadastro h1 {
+	font-size: 38px;
+	text-transform: uppercase; 
+
+}
+
+.cadastro form {
+	margin: 50px 0;
+}
+
+label {
+	font-size: 20px;
+	display: block;
+	margin: 10px 0 10px;
+}
+
+p {
+	font-size: 24px;
+	text-transform: uppercase; 
+	padding:  0 20px; 
+}
+
+.cadastro input {
+	padding: 5px;
+	margin: 0 0 20px;
+}
+
+.cadastro div{
+	float: left;
+	position:static;
+	width: 50%;
+	display: inline;
+	margin: 10px 0 0 0px;
+}
+
+.cadastro select {
+	padding: 5px;
+	font-size: 15px;
+	margin: 0 0 20px;
+}
+
+#posisaoLinha{
+	width: 100%;
+	margin: 50px 0 50px; 
+}
+
+footer {
+	background: #000000;
+	position:relative;
+	margin: 0 auto;
+	width: 100%;
+	bottom: -300px;
+}
+
+footer img{
+	width: 20%;
+}

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>Cadastro Funcionario</title>
+        <meta charset="utf-8">
+        <link rel="stylesheet" href="reset.css">
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <header>
+            <div class="caixa">
+                <img src="Logo-Studio.png">
+            </div>
+        </header>
+
+        <main class="cadastro">
+            <h1>Cadastro de Funcionario</h1>
+            <form class="dadospessoal">
+                <p>Dados do Funcionario</p>
+                <div>
+                    <label for="nome">Nome</label>
+                    <input type="text" id="nome" required size="45">
+
+                    <label for="email">Email</label>
+                    <input type="email" id="email" required size="40" 
+                    placeholder="seunome@dominio.com">	
+
+                    <label for="setor">Setor</label>
+                    <input type="text" id="setor" required size="20">
+
+                </div>
+
+               <div>
+               <label for="EstFuncionario">Estado do funcionario</label>
+                    <select id="EstFuncionario">
+                        <option>Ativo</option>
+                        <option>Inativo</option>
+                        <option>Suspenso</option>
+                        <option>Afastado</option>
+                    </select>	
+
+                     <label for="filial">Filial</label>
+                    <input type="text" id="filial" required size="25">
+                </div>	
+            </form>
+        </main>
+
+        <footer>
+            <img src="Logo-Studio.png">
+        </footer>
+    </body>
+</html>
