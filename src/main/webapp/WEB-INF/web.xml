@@ -8,6 +8,14 @@
         <servlet-name>CadastroClienteServlet</servlet-name>
         <url-pattern>/CadastroClienteServlet</url-pattern>
     </servlet-mapping>
+    <servlet>
+        <servlet-name>CadastroFuncionarioServlet</servlet-name>
+        <servlet-class>br.senac.sp.servlet.CadastroFuncionarioServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>CadastroFuncionarioServlet</servlet-name>
+        <url-pattern>/CadastroFuncionarioServlet</url-pattern>
+    </servlet-mapping>
     <session-config>
         <session-timeout>
             30

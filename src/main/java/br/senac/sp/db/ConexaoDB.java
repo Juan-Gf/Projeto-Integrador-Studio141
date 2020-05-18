@@ -26,9 +26,9 @@ public class ConexaoDB {
     }
 
     public static Connection getConexao() throws SQLException {
-        String dbURL = "jdbc:derby://localhost:1527/senac;create=true";
-        String user = "senac";
-        String password = "senac";
+        String dbURL = "jdbc:derby://localhost:1527/studio141;create=true";
+        String user = "studio141";
+        String password = "studio141";
         return DriverManager.getConnection(dbURL, user, password);
     }
 
