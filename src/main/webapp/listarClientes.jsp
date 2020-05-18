@@ -21,6 +21,7 @@
             <th>Tipo de Pessoa</th>
             <th>Celular</th>
             <th>Nascimento</th>
+            <th>Id</th>
             
             <c:forEach var="c" items="${clientes}">
                 <tr>
@@ -30,6 +31,7 @@
                     <td>${c.tipoPessoa}</td>
                     <td>${c.celular}</td>
                     <td>${c.nascimento}</td>
+                    <td>${c.id}</td>
                 </tr>
             </c:forEach>
             

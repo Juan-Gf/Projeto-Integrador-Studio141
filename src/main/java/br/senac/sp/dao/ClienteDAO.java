@@ -59,8 +59,9 @@ public class ClienteDAO {
                 String tipoPessoa = rs.getString("tipoPessoa");
                 String celular = rs.getString("celular");
                 String nascimento = rs.getString("nascimento");
+                String id = rs.getString("id");
                 
-                clientes.add(new Cliente(nome, email, cpf, tipoPessoa, celular, nascimento));
+                clientes.add(new Cliente(nome, email, cpf, tipoPessoa, celular, nascimento, id));
             }
         } catch (SQLException ex) {
             Logger.getLogger(ClienteDAO.class.getName()).log(Level.SEVERE, null, ex);

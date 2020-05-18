@@ -17,15 +17,17 @@ public class Cliente {
     private String tipoPessoa;
     private String celular;
     private String nascimento;
+    private String id;
 
-    public Cliente(String nome, String email, String cpf, String tipoPessoa, String celular, String nascimento) {
+    public Cliente(String nome, String email, String cpf, String tipoPessoa, String celular, String nascimento, String id) {
         this.nome = nome;
         this.email = email;
         this.cpf = cpf;
         this.tipoPessoa = tipoPessoa;
         this.celular = celular;
         this.nascimento = nascimento;
-    }
+        this.id = id;
+    }   
 
     public String getNome() {
         return nome;
@@ -74,4 +76,14 @@ public class Cliente {
     public void setNascimento(String nascimento) {
         this.nascimento = nascimento;
     }
+
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
+    }
+    
+    
 }
