@@ -18,8 +18,9 @@ import java.util.logging.Logger;
  * @author DiogoSouza
  */
 public class FuncionarioDAO {
-    public static boolean cadastrarFuncionario(Funcionario funcionario){
-                boolean ok = false;
+
+    public static boolean cadastrarFuncionario(Funcionario funcionario) {
+        boolean ok = false;
         Connection con;
         try {
             con = ConexaoDB.getConexao();
@@ -36,6 +37,6 @@ public class FuncionarioDAO {
         } catch (SQLException ex) {
             Logger.getLogger(FuncionarioDAO.class.getName()).log(Level.SEVERE, null, ex);
         }
-       return ok;
+        return ok;
     }
 }

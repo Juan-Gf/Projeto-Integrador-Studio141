@@ -47,7 +47,7 @@ public class CadastroFuncionarioServlet extends HttpServlet {
         String url = "";
         if (ok) {
             request.setAttribute("cadastroOK", true);
-            url = "/sucesso2.jsp";
+            url = "/sucesso.jsp";
         } else {
             url = "/erro.jsp";
         }
