@@ -13,10 +13,18 @@ public class Cliente {
     
     private String nome;
     private String email;
+    private String cpf;
+    private String tipoPessoa;
+    private String celular;
+    private String nascimento;
 
-    public Cliente(String nome, String email) {
+    public Cliente(String nome, String email, String cpf, String tipoPessoa, String celular, String nascimento) {
         this.nome = nome;
         this.email = email;
+        this.cpf = cpf;
+        this.tipoPessoa = tipoPessoa;
+        this.celular = celular;
+        this.nascimento = nascimento;
     }
 
     public String getNome() {
@@ -35,6 +43,35 @@ public class Cliente {
         this.email = email;
     }
 
-    
-    
+    public String getCpf() {
+        return cpf;
+    }
+
+    public void setCpf(String cpf) {
+        this.cpf = cpf;
+    }
+
+    public String getTipoPessoa() {
+        return tipoPessoa;
+    }
+
+    public void setTipoPessoa(String tipoPessoa) {
+        this.tipoPessoa = tipoPessoa;
+    }
+
+    public String getCelular() {
+        return celular;
+    }
+
+    public void setCelular(String celular) {
+        this.celular = celular;
+    }
+
+    public String getNascimento() {
+        return nascimento;
+    }
+
+    public void setNascimento(String nascimento) {
+        this.nascimento = nascimento;
+    }
 }
