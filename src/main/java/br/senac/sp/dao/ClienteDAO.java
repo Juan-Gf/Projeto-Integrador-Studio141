@@ -69,15 +69,15 @@ public class ClienteDAO {
         return clientes;
     }
 
-    public static boolean excluirCliente(Cliente cliente){
+    public static boolean excluirCliente(int id){
         boolean ok = false;
         Connection con;
         try {
             con = ConexaoDB.getConexao();
-            String sql = ("delete from cliente where id = ?)");
+            String sql = ("delete from cliente where id = ?");
             PreparedStatement ps = con.prepareStatement(sql);
-            ps.setString(1, cliente.getId());
-            ps.execute();
+            ps.setInt(1, id);
+            ps.executeUpdate();
             ok = true;
         } catch (SQLException ex) {
             Logger.getLogger(ClienteDAO.class.getName()).log(Level.SEVERE, null, ex);

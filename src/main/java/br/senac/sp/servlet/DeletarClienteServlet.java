@@ -66,10 +66,8 @@ public class DeletarClienteServlet extends HttpServlet {
             throws ServletException, IOException {
 
         String id = request.getParameter("id");
-        
-        
-        Cliente cliente = new Cliente(id);
-        boolean ok = ClienteDAO.excluirCliente(cliente);
+
+        boolean ok = ClienteDAO.excluirCliente(Integer.parseInt(id));
         PrintWriter out = response.getWriter();
 
         String url = "";
