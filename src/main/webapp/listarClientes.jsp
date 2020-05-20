@@ -14,7 +14,7 @@
     </head>
     <body>
         
-        <table>
+        <table border="15">
             <th>Nome</th>
             <th>Email</th>
             <th>CPF</th>

@@ -68,4 +68,19 @@ public class ClienteDAO {
         }
        return clientes;
     }
+    
+    public static boolean excluirCliente(Cliente cliente) {
+        boolean ok = false;
+        Connection con;
+        try {
+            con = ConexaoDB.getConexao();
+            String sql = ("delete from cliente where id = "+cliente.getId());
+            ok = true;
+        } catch (SQLException ex) {
+            Logger.getLogger(ClienteDAO.class.getName()).log(Level.SEVERE, null, ex);
+        }
+       return ok;
+    }
+    
+    
 }
