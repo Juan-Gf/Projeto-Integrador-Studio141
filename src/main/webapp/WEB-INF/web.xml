@@ -40,7 +40,14 @@
         <servlet-name>AlterarClientes</servlet-name>
         <url-pattern>/AlterarClientes</url-pattern>
     </servlet-mapping>
-    
+    <servlet>
+        <servlet-name>ListarFuncionarios</servlet-name>
+        <servlet-class>br.senac.sp.servlet.ListarFuncionarios</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>ListarFuncionarios</servlet-name>
+        <url-pattern>/ListarFuncionarios</url-pattern>
+    </servlet-mapping>
     <session-config>
         <session-timeout>
             30

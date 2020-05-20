@@ -16,6 +16,6 @@
         <a href="cadastroCliente.jsp">Cadastro de Cliente</a><br/>
         <a href="ListarClientes">Listar Clientes</a><br/>
         <a href="deletarCliente.jsp">Deletar um cliente</a><br/>
-        <a href="alterarCliente.jsp">Alterar um cliente</a><br/>
+        <a href="AlterarClientes">Alterar um cliente</a><br/>
     </body>
 </html>

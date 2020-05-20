@@ -6,10 +6,14 @@
 package br.senac.sp.dao;
 
 import br.senac.sp.db.ConexaoDB;
+import br.senac.sp.entidade.Cliente;
 import br.senac.sp.entidade.Funcionario;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -38,5 +42,33 @@ public class FuncionarioDAO {
             Logger.getLogger(FuncionarioDAO.class.getName()).log(Level.SEVERE, null, ex);
         }
         return ok;
+    }
+
+    public static List<Funcionario> listarFuncionarios() {
+        List<Funcionario> funcionarios = new ArrayList<>();
+        boolean ok = false;
+        Connection con;
+        try {
+            con = ConexaoDB.getConexao();
+            String sql = "select * from funcionario";
+            PreparedStatement ps = con.prepareStatement(sql);
+            ResultSet rs = ps.executeQuery();
+            while (rs.next()) {
+
+                String nome = rs.getString("nome");
+                String senha = rs.getString("senha");
+                String email = rs.getString("email");
+                String setor = rs.getString("setor");
+                String codFilial = rs.getString("codFilial");
+                String status = rs.getString("status");
+                //String id = rs.getString("id");
+
+                funcionarios.add(new Funcionario(nome, senha, email, setor, codFilial, status));
+            }
+        } catch (SQLException ex) {
+            Logger.getLogger(FuncionarioDAO.class
+                    .getName()).log(Level.SEVERE, null, ex);
+        }
+        return funcionarios;
     }
 }

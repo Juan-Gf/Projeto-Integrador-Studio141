@@ -69,7 +69,7 @@ public class ClienteDAO {
         return clientes;
     }
 
-    public static boolean excluirCliente(int id){
+    public static boolean excluirCliente(int id) {
         boolean ok = false;
         Connection con;
         try {
@@ -83,6 +83,36 @@ public class ClienteDAO {
             Logger.getLogger(ClienteDAO.class.getName()).log(Level.SEVERE, null, ex);
         }
         return ok;
+    }
+
+    public static Cliente localizarClienteID(String id) {
+        boolean ok = false;
+        Connection con;
+        Cliente cliente = new Cliente();
+        try {
+            con = ConexaoDB.getConexao();
+            String sql = ("select * from cliente where id = ?");
+            PreparedStatement ps = con.prepareStatement(sql);
+            ps.setString(1, id);
+            ResultSet rs = ps.executeQuery();
+
+            while (rs.next()) {
+                String nome = rs.getString("nome");
+                String email = rs.getString("email");
+                String cpf = rs.getString("cpf");
+                String tipoPessoa = rs.getString("tipoPessoa");
+                String celular = rs.getString("celular");
+                String nascimento = rs.getString("nascimento");
+                String ide = rs.getString("id");
+
+                cliente = new Cliente(nome, email, cpf, tipoPessoa, celular, nascimento, ide);
+            }
+
+            ok = true;
+        } catch (SQLException ex) {
+            Logger.getLogger(ClienteDAO.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return cliente;
     }
 
 }

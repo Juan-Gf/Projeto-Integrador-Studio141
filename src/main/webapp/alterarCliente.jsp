@@ -21,7 +21,7 @@
             <th>Celular</th>
             <th>Nascimento</th>
             <th>Id</th>
-            
+            <th>Alterar</th>
             <c:forEach var="c" items="${clientes}">
                 <tr>
                     <td>${c.nome}</td>
@@ -31,6 +31,7 @@
                     <td>${c.celular}</td>
                     <td>${c.nascimento}</td>
                     <td>${c.id}</td>
+                    <td><a href="AlterarClientes?action=edit&id=<c:out value="${c.id}"/>">Entrar</a></td>
                 </tr>
             </c:forEach>
             

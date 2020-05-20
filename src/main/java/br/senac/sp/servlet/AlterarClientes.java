@@ -19,8 +19,9 @@ import javax.servlet.http.HttpServletResponse;
  *
  * @author DiogoSouza
  */
-public class AlterarClientes extends HttpServlet{
-        /**
+public class AlterarClientes extends HttpServlet {
+
+    /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
      * methods.
      *
@@ -32,12 +33,12 @@ public class AlterarClientes extends HttpServlet{
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
-        
-        List<Cliente> clientes = ClienteDAO.listarClientes();
+
+        /*List<Cliente> clientes = ClienteDAO.listarClientes();
         request.setAttribute("clientes", clientes);
-        
+
         RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/alterarCliente.jsp");
-        dispatcher.forward(request,response);
+        dispatcher.forward(request, response);*/
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
@@ -52,6 +53,15 @@ public class AlterarClientes extends HttpServlet{
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
+        String action = request.getParameter("action");
+        
+        if(action=="edit"){
+            
+        }
+        //String userId = request.getParameter("id");
+        //Cliente cliente = ClienteDAO.localizarClienteID(userId);
+        //request.setAttribute("Cliente", cliente);
+
         processRequest(request, response);
     }
 

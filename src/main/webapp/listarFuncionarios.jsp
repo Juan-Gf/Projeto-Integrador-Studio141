@@ -1,38 +1,34 @@
 <%-- 
-    Document   : listarCliente
-    Created on : 17 de mai de 2020, 22:43:43
+    Document   : listarFuncionarios
+    Created on : 20 de mai de 2020, 11:58:46
     Author     : DiogoSouza
 --%>
-
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>Lista de Clientes</title>
+        <title>Lista de Funcionarios</title>
     </head>
     <body>
-
         <table border="15">
             <th>Nome</th>
+            <th>Senha</th>
             <th>Email</th>
-            <th>CPF</th>
-            <th>Tipo de Pessoa</th>
-            <th>Celular</th>
-            <th>Nascimento</th>
-            <th>Id</th>
+            <th>Setor</th>
+            <th>CodFilial</th>
+            <th>Status</th>
             <th>Alterar</th>
-                <c:forEach var="c" items="${clientes}">
+                <c:forEach var="c" items="${funcionarios}">
                 <tr>
                     <td>${c.nome}</td>
+                    <td>${c.senha}</td>
                     <td>${c.email}</td>
-                    <td>${c.cpf}</td>
-                    <td>${c.tipoPessoa}</td>
-                    <td>${c.celular}</td>
-                    <td>${c.nascimento}</td>
-                    <td>${c.id}</td>
-                    <td><a href="AlterarClientes?action=edit&id=<c:out value="${c.id}"/>">Entrar</a></td>
+                    <td>${c.setor}</td>
+                    <td>${c.codFilial}</td>
+                    <td>${c.status}</td>
+
                 </tr>
             </c:forEach>
 
