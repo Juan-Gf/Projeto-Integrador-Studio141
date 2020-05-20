@@ -31,7 +31,8 @@
                     <td>${c.celular}</td>
                     <td>${c.nascimento}</td>
                     <td>${c.id}</td>
-                    <td><a href="AlterarClientes?action=edit&id=<c:out value="${c.id}"/>">Entrar</a></td>
+                    
+                    
                 </tr>
             </c:forEach>
             

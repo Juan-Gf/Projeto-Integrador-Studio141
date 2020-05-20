@@ -5,8 +5,9 @@
  */
 package br.senac.sp.servlet;
 
+import br.senac.sp.dao.ClienteDAO;
 import br.senac.sp.dao.FuncionarioDAO;
-import br.senac.sp.entidade.Funcionario;
+import com.sun.net.httpserver.HttpServer;
 import java.io.IOException;
 import java.io.PrintWriter;
 import javax.servlet.RequestDispatcher;
@@ -19,30 +20,21 @@ import javax.servlet.http.HttpServletResponse;
  *
  * @author DiogoSouza
  */
-
-public class CadastroFuncionarioServlet extends HttpServlet {
-//Basicamente você utiliza o método doGet sempre que a requisição que você faz 
-    //não altere o estado do servidor, como uma consulta, uma busca e etc.
+public class DeletarFuncionarioServlet extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         //Empty
     }
-
+    
     @Override
-    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+    protected void doPost(HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException {
 
-        String nome = request.getParameter("nome");
-        String senha = request.getParameter("senha");
-        String email = request.getParameter("email");
-        String setor = request.getParameter("setor");
-        String codFilial = request.getParameter("codFilial");
-        String status = request.getParameter("status");
         String id = request.getParameter("id");
 
-        Funcionario funcionario = new Funcionario(nome, senha, email, setor, codFilial, status, id);
-        boolean ok = FuncionarioDAO.cadastrarFuncionario(funcionario);
+        boolean ok = FuncionarioDAO.excluirFuncionario(Integer.parseInt(id));
         PrintWriter out = response.getWriter();
 
         String url = "";
@@ -52,18 +44,9 @@ public class CadastroFuncionarioServlet extends HttpServlet {
         } else {
             url = "/erro.jsp";
         }
-
         RequestDispatcher dispatcher = getServletContext().getRequestDispatcher(url);
-
-        dispatcher.forward(request, response);
+            dispatcher.forward(request,response);
+       
 
     }
-
-
-    @Override
-    public String getServletInfo() {
-        return "Short description";
-    }// </editor-fold>
-
-
 }

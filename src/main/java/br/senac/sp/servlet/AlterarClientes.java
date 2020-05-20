@@ -53,11 +53,11 @@ public class AlterarClientes extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        String action = request.getParameter("action");
+        //String action = request.getParameter("action");
         
-        if(action=="edit"){
+        //if(action=="edit"){
             
-        }
+        //}
         //String userId = request.getParameter("id");
         //Cliente cliente = ClienteDAO.localizarClienteID(userId);
         //request.setAttribute("Cliente", cliente);

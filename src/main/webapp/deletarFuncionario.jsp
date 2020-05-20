@@ -1,6 +1,6 @@
 <%-- 
-    Document   : deletarCliente
-    Created on : 18 de mai de 2020, 23:49:21
+    Document   : deletarFuncionario
+    Created on : 20 de mai de 2020, 13:01:10
     Author     : DiogoSouza
 --%>
 
@@ -9,13 +9,13 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>Deletar Cliente</title>
+        <title>Deletar Funcionario</title>
     </head>
     <body>
-        <h1>Deletar Cliente</h1><br>
+        <h1>Deletar Funcionario</h1><br>
         Por gentileza, digite ID que deseja deletar.
 
-        <form action="DeletarClienteServlet" method="POST">
+        <form action="DeletarFuncionarioServlet" method="POST">
             ID<input type="text" name="id">
             <button type="submit">Deletar</button><br>
         </form>

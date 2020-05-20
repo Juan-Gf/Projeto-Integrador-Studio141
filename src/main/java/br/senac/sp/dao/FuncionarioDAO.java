@@ -61,14 +61,30 @@ public class FuncionarioDAO {
                 String setor = rs.getString("setor");
                 String codFilial = rs.getString("codFilial");
                 String status = rs.getString("status");
-                //String id = rs.getString("id");
+                String id = rs.getString("id");
 
-                funcionarios.add(new Funcionario(nome, senha, email, setor, codFilial, status));
+                funcionarios.add(new Funcionario(nome, senha, email, setor, codFilial, status, id));
             }
         } catch (SQLException ex) {
             Logger.getLogger(FuncionarioDAO.class
                     .getName()).log(Level.SEVERE, null, ex);
         }
         return funcionarios;
+    }
+    
+    public static boolean excluirFuncionario(int id) {
+        boolean ok = false;
+        Connection con;
+        try {
+            con = ConexaoDB.getConexao();
+            String sql = ("delete from funcionario where id = ?");
+            PreparedStatement ps = con.prepareStatement(sql);
+            ps.setInt(1, id);
+            ps.executeUpdate();
+            ok = true;
+        } catch (SQLException ex) {
+            Logger.getLogger(FuncionarioDAO.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return ok;
     }
 }

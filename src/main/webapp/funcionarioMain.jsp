@@ -15,5 +15,6 @@
         <h1>Menu</h1>
         <a href="cadastroFuncionario.jsp">Cadastrar Funcionário</a><br/>
         <a href="ListarFuncionarios">Listar Funcionarios</a><br/>
+        <a href="deletarFuncionario.jsp">Deletar Funcionario</a><br/>
     </body>
 </html>

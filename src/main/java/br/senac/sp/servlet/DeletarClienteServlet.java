@@ -27,40 +27,6 @@ public class DeletarClienteServlet extends HttpServlet {
         //Empty
     }
 
-    /*@Override
-    protected void doPost(HttpServletRequest request, HttpServletResponse response)
-        throws ServletException, IOException {
-        
-        
-        String id = request.getParameter("id");
-        String cpf = request.getParameter("cpf");
-        
-        if(id!=null){
-            String type = "id";
-            excluirByIDorCPF(id, request, response, type);
-        }else{
-            String type = "cpf";
-            excluirByIDorCPF(cpf, request, response, type);
-        }
-        
-    }
-    
-    public void excluirByIDorCPF(String idCpf, HttpServletRequest request, HttpServletResponse response, String type) throws IOException, ServletException{
-        Cliente cliente = new Cliente(idCpf);
-        boolean ok = ClienteDAO.excluirCliente(cliente, type);
-        PrintWriter out = response.getWriter();
-
-        String url = "";
-        if (ok) {
-            request.setAttribute("cadastroOK", true);
-            url = "/sucesso.jsp";
-        } else {
-            url = "/erro.jsp";
-        }
-        RequestDispatcher dispatcher = getServletContext().getRequestDispatcher(url);
-        dispatcher.forward(request, response);
-    }*/
-    
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
@@ -78,8 +44,7 @@ public class DeletarClienteServlet extends HttpServlet {
             url = "/erro.jsp";
         }
         RequestDispatcher dispatcher = getServletContext().getRequestDispatcher(url);
-            dispatcher.forward(request,response);
-       
+        dispatcher.forward(request, response);
 
     }
 

@@ -19,6 +19,7 @@
             <th>Setor</th>
             <th>CodFilial</th>
             <th>Status</th>
+            <th>ID</th>
             <th>Alterar</th>
                 <c:forEach var="c" items="${funcionarios}">
                 <tr>
@@ -28,6 +29,7 @@
                     <td>${c.setor}</td>
                     <td>${c.codFilial}</td>
                     <td>${c.status}</td>
+                    <td>${c.id}</td>
 
                 </tr>
             </c:forEach>
