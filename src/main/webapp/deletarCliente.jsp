@@ -13,12 +13,15 @@
     </head>
     <body>
         <h1>Deletar Cliente</h1>
-        
+
         //implemete o listar cliente, e depois com o forma de baixo vc pede para ele digitar o cpf que 
         deseja exlcuir 
-        
+        <br>
+        Por gentileza, digite o CPF ou ID que deseja deletar.
+
         <form action="DeletarClienteServlet" method="POST">
-            
+            ID <input type="text" name="id">
+            <button type="submit">Deletar</button><br>
         </form>
     </body>
 </html>

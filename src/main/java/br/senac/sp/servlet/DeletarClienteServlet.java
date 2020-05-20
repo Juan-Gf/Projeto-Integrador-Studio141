@@ -27,20 +27,27 @@ public class DeletarClienteServlet extends HttpServlet {
         //Empty
     }
 
-    @Override
+    /*@Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
         throws ServletException, IOException {
-
-        String nome = request.getParameter("nome");
-        String email = request.getParameter("email");
-        String cpf = request.getParameter("cpf");
-        String tipoPessoa = request.getParameter("tipoPessoa");
-        String celular = request.getParameter("celular");
-        String nascimento = request.getParameter("nascimento");
+        
+        
         String id = request.getParameter("id");
-
-        Cliente cliente = new Cliente(nome, email, cpf, tipoPessoa, celular, nascimento, id);
-        boolean ok = ClienteDAO.excluirCliente(cliente);
+        String cpf = request.getParameter("cpf");
+        
+        if(id!=null){
+            String type = "id";
+            excluirByIDorCPF(id, request, response, type);
+        }else{
+            String type = "cpf";
+            excluirByIDorCPF(cpf, request, response, type);
+        }
+        
+    }
+    
+    public void excluirByIDorCPF(String idCpf, HttpServletRequest request, HttpServletResponse response, String type) throws IOException, ServletException{
+        Cliente cliente = new Cliente(idCpf);
+        boolean ok = ClienteDAO.excluirCliente(cliente, type);
         PrintWriter out = response.getWriter();
 
         String url = "";
@@ -52,6 +59,30 @@ public class DeletarClienteServlet extends HttpServlet {
         }
         RequestDispatcher dispatcher = getServletContext().getRequestDispatcher(url);
         dispatcher.forward(request, response);
+    }*/
+    
+    @Override
+    protected void doPost(HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException {
+
+        String id = request.getParameter("id");
+        
+        
+        Cliente cliente = new Cliente(id);
+        boolean ok = ClienteDAO.excluirCliente(cliente);
+        PrintWriter out = response.getWriter();
+
+        String url = "";
+        if (ok) {
+            request.setAttribute("cadastroOK", true);
+            url = "/sucesso.jsp";
+        } else {
+            url = "/erro.jsp";
+        }
+        RequestDispatcher dispatcher = getServletContext().getRequestDispatcher(url);
+            dispatcher.forward(request,response);
+       
+
     }
 
 }

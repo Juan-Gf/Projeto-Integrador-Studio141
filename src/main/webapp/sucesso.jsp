@@ -9,11 +9,10 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>JSP Page</title>
+        <title>Sucesso</title>
     </head>
     <body>
         <h1>Sucesso!</h1>
-        <h1>Sucesso! </h1>
         <c:if test="${cadastroOK}">
             <p>Cadastro Relizado com Sucesso</p>
         </c:if>

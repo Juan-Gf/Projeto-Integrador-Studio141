@@ -27,7 +27,12 @@ public class Cliente {
         this.celular = celular;
         this.nascimento = nascimento;
         this.id = id;
-    }   
+    }
+    
+    public Cliente(String dado){
+        this.id = id;
+    }
+    
 
     public String getNome() {
         return nome;

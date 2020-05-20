@@ -24,6 +24,22 @@
         <servlet-name>CadastroFuncionarioServlet</servlet-name>
         <url-pattern>/CadastroFuncionarioServlet</url-pattern>
     </servlet-mapping>
+    <servlet>
+        <servlet-name>DeletarClienteServlet</servlet-name>
+        <servlet-class>br.senac.sp.servlet.DeletarClienteServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>DeletarClienteServlet</servlet-name>
+        <url-pattern>/DeletarClienteServlet</url-pattern>
+    </servlet-mapping>
+    <servlet>
+        <servlet-name>AlterarClientes</servlet-name>
+        <servlet-class>br.senac.sp.servlet.AlterarClientes</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>AlterarClientes</servlet-name>
+        <url-pattern>/AlterarClientes</url-pattern>
+    </servlet-mapping>
     
     <session-config>
         <session-timeout>

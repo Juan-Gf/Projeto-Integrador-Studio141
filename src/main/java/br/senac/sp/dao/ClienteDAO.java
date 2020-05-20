@@ -21,7 +21,7 @@ import java.util.logging.Logger;
  * @author tiago.bscarton
  */
 public class ClienteDAO {
-    
+
     public static boolean cadastrarCliente(Cliente cliente) {
         boolean ok = false;
         Connection con;
@@ -40,9 +40,9 @@ public class ClienteDAO {
         } catch (SQLException ex) {
             Logger.getLogger(ClienteDAO.class.getName()).log(Level.SEVERE, null, ex);
         }
-       return ok;
+        return ok;
     }
-    
+
     public static List<Cliente> listarClientes() {
         List<Cliente> clientes = new ArrayList<>();
         boolean ok = false;
@@ -52,7 +52,7 @@ public class ClienteDAO {
             String sql = "select * from cliente";
             PreparedStatement ps = con.prepareStatement(sql);
             ResultSet rs = ps.executeQuery();
-            while(rs.next()) {
+            while (rs.next()) {
                 String nome = rs.getString("nome");
                 String email = rs.getString("email");
                 String cpf = rs.getString("cpf");
@@ -60,27 +60,29 @@ public class ClienteDAO {
                 String celular = rs.getString("celular");
                 String nascimento = rs.getString("nascimento");
                 String id = rs.getString("id");
-                
+
                 clientes.add(new Cliente(nome, email, cpf, tipoPessoa, celular, nascimento, id));
             }
         } catch (SQLException ex) {
             Logger.getLogger(ClienteDAO.class.getName()).log(Level.SEVERE, null, ex);
         }
-       return clientes;
+        return clientes;
     }
-    
-    public static boolean excluirCliente(Cliente cliente) {
+
+    public static boolean excluirCliente(Cliente cliente){
         boolean ok = false;
         Connection con;
         try {
             con = ConexaoDB.getConexao();
-            String sql = ("delete from cliente where id = "+cliente.getId());
+            String sql = ("delete from cliente where id = ?)");
+            PreparedStatement ps = con.prepareStatement(sql);
+            ps.setString(1, cliente.getId());
+            ps.execute();
             ok = true;
         } catch (SQLException ex) {
             Logger.getLogger(ClienteDAO.class.getName()).log(Level.SEVERE, null, ex);
         }
-       return ok;
+        return ok;
     }
-    
-    
+
 }
