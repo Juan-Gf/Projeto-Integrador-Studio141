@@ -137,5 +137,21 @@ public class ClienteDAO {
         }
         return ok;
     }
+    
+    /*public static boolean iniciarCarrinhoCliente(Cliente cliente) {
+        boolean ok = false;
+        Connection con;
+        try {
+            con = ConexaoDB.getConexao();
+            String sql = ("delete from cliente where id = ?");
+            PreparedStatement ps = con.prepareStatement(sql);
+            ps.setInt(1, id);
+            ps.executeUpdate();
+            ok = true;
+        } catch (SQLException ex) {
+            Logger.getLogger(ClienteDAO.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return ok;
+    }*/
 
 }
