@@ -8,6 +8,7 @@ package br.senac.sp.servlet;
 import br.senac.sp.dao.ClienteDAO;
 import br.senac.sp.entidade.Cliente;
 import java.io.IOException;
+import java.io.PrintWriter;
 import java.util.List;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -34,11 +35,6 @@ public class AlterarClientes extends HttpServlet {
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
 
-        /*List<Cliente> clientes = ClienteDAO.listarClientes();
-        request.setAttribute("clientes", clientes);
-
-        RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/alterarCliente.jsp");
-        dispatcher.forward(request, response);*/
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
@@ -53,16 +49,20 @@ public class AlterarClientes extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        //String action = request.getParameter("action");
-        
-        //if(action=="edit"){
-            
-        //}
-        //String userId = request.getParameter("id");
-        //Cliente cliente = ClienteDAO.localizarClienteID(userId);
-        //request.setAttribute("Cliente", cliente);
 
-        processRequest(request, response);
+        String forward="";
+        String action = request.getParameter("action");
+
+ 
+        if (action.equalsIgnoreCase("edit")){
+            forward = "alterarCliente.jsp";
+            String id = request.getParameter("id");
+            Cliente cliente = ClienteDAO.localizarClienteID(id);
+            request.setAttribute("cliente", cliente);
+        }
+
+        RequestDispatcher view = request.getRequestDispatcher(forward);
+        view.forward(request, response);
     }
 
     /**
@@ -77,6 +77,31 @@ public class AlterarClientes extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         processRequest(request, response);
+        
+        String nome = request.getParameter("nome");
+        String email = request.getParameter("email");
+        String cpf = request.getParameter("cpf");
+        String tipoPessoa = request.getParameter("tipoPessoa");
+        String celular = request.getParameter("celular");
+        String nascimento = request.getParameter("nascimento");
+        String id = request.getParameter("id");
+        
+        Cliente cliente = new Cliente(nome,email,cpf,tipoPessoa,celular,nascimento, id);
+        boolean ok = ClienteDAO.alterarCliente(cliente);
+        PrintWriter out = response.getWriter();
+
+        String url = "";
+        if (ok) {
+            request.setAttribute("cadastroOK", true);
+            url = "/sucesso.jsp";
+        } else {
+            url = "/erro.jsp";
+        }
+        RequestDispatcher dispatcher = getServletContext().getRequestDispatcher(url);
+            dispatcher.forward(request,response);
+       
+
+        
     }
 
     /**

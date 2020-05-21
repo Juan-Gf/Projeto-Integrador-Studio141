@@ -12,32 +12,18 @@
         <title>Lista de Clientes</title>
     </head>
     <body>
-        
-        <table border="15">
-            <th>Nome</th>
-            <th>Email</th>
-            <th>CPF</th>
-            <th>Tipo de Pessoa</th>
-            <th>Celular</th>
-            <th>Nascimento</th>
-            <th>Id</th>
-            <th>Alterar</th>
-            <c:forEach var="c" items="${clientes}">
-                <tr>
-                    <td>${c.nome}</td>
-                    <td>${c.email}</td>
-                    <td>${c.cpf}</td>
-                    <td>${c.tipoPessoa}</td>
-                    <td>${c.celular}</td>
-                    <td>${c.nascimento}</td>
-                    <td>${c.id}</td>
-                    
-                    
-                </tr>
-            </c:forEach>
-            
-            <tr></tr>
-        </table>
-         <a href="index.html">Início</a>
+
+        <form method="POST" action="AlterarClientes" name="frmAddUser">
+            Nome:<input type="text" name="nome" value="<c:out value="${cliente.nome}" />" /><br>
+            Email:<input type="text" name="email" value="<c:out value="${cliente.email}" />" /><br>
+            Cpf: <input type="text" name="cpf" value="<c:out value="${cliente.cpf}" />" /><br>
+            Tipo de Pessoa: <input type="text" name="tipoPessoa" value="<c:out value="${cliente.tipoPessoa}" />" /><br>
+            Celular: <input type="tel" name="celular" required size="14" value="<c:out value="${cliente.celular}" />" /><br>
+            Nascimento: <input type="text" nome="nascimento" required size="11" value="<c:out value="${cliente.nascimento}" />" /><br> 
+            <button type="submit" >Enviar</button>
+        </form>
+
+
+        <a href="index.html">Início</a>
     </body>
 </html>

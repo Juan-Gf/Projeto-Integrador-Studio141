@@ -9,9 +9,9 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>JSP Page</title>
+        <title>ERRO</title>
     </head>
     <body>
-        <h1>Ops! O cadastro falhou, revise os dados e tente novamente</h1>
+        <h1>Ops! Falhou, revise os dados e tente novamente</h1>
     </body>
 </html>

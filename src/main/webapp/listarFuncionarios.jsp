@@ -21,6 +21,7 @@
             <th>Status</th>
             <th>ID</th>
             <th>Alterar</th>
+            
                 <c:forEach var="c" items="${funcionarios}">
                 <tr>
                     <td>${c.nome}</td>

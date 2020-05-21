@@ -14,7 +14,7 @@
     <body>
         <h1>Sucesso!</h1>
         <c:if test="${cadastroOK}">
-            <p>Cadastro Relizado com Sucesso</p>
+            <p>Sucesso!</p>
         </c:if>
         <a href="index.html">Início</a>
     </body>

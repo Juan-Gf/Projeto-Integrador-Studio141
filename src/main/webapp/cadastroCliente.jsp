@@ -12,7 +12,7 @@
             Email:<input type="text" name="email"/><br>
             Cpf: <input type="text" name="cpf"/><br>
             Tipo de Pessoa: <input type="text" name="tipoPessoa"/><br>
-            Celular: <input type="tel" name="celular" required size="14"/><br>
+            Celular: <input type="text" name="celular" required size="14"/><br>
             Nascimento: <input type="text" nome="nascimento" required size="11"/><br> 
             <button type="submit" >Enviar</button>
         </form>

@@ -115,4 +115,27 @@ public class ClienteDAO {
         return cliente;
     }
 
+    public static boolean alterarCliente(Cliente cliente) {
+        boolean ok = false;
+        Connection con;
+        try {
+            con = ConexaoDB.getConexao();
+            String sql = "update cliente set nome=?, email=?, cpf=?, "
+                    + "tipoPessoa=?, celular=?, nascimento=? where id=?";
+            PreparedStatement ps = con.prepareStatement(sql);
+            ps.setString(1, cliente.getNome());
+            ps.setString(2, cliente.getEmail());
+            ps.setString(3, cliente.getCpf());
+            ps.setString(4, cliente.getTipoPessoa());
+            ps.setString(5, cliente.getCelular());
+            ps.setString(6, cliente.getNascimento());
+            ps.setString(7, cliente.getId());
+            ps.executeUpdate();
+            ok = true;
+        } catch (SQLException ex) {
+            Logger.getLogger(ClienteDAO.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return ok;
+    }
+
 }

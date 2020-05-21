@@ -56,6 +56,30 @@
         <servlet-name>DeletarFuncionarioServlet</servlet-name>
         <url-pattern>/DeletarFuncionarioServlet</url-pattern>
     </servlet-mapping>
+    <servlet>
+        <servlet-name>CadastroProdutoServlet</servlet-name>
+        <servlet-class>br.senac.sp.servlet.CadastroProdutoServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>CadastroProdutoServlet</servlet-name>
+        <url-pattern>/CadastroProdutoServlet</url-pattern>
+    </servlet-mapping>
+    <servlet>
+        <servlet-name>ListarProdutos</servlet-name>
+        <servlet-class>br.senac.sp.servlet.ListarProdutos</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>ListarProdutos</servlet-name>
+        <url-pattern>/ListarProdutos</url-pattern>
+    </servlet-mapping>
+    <servlet>
+        <servlet-name>DeletarProdutoServlet</servlet-name>
+        <servlet-class>br.senac.sp.servlet.DeletarProdutoServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>DeletarProdutoServlet</servlet-name>
+        <url-pattern>/DeletarProdutoServlet</url-pattern>
+    </servlet-mapping>
     <session-config>
         <session-timeout>
             30
