@@ -6,7 +6,9 @@
 package br.senac.sp.servlet;
 
 import br.senac.sp.dao.ClienteDAO;
+import br.senac.sp.dao.PedidoDAO;
 import br.senac.sp.entidade.Cliente;
+import br.senac.sp.entidade.Pedido;
 import java.io.IOException;
 import java.io.PrintWriter;
 import javax.servlet.RequestDispatcher;
@@ -30,17 +32,19 @@ public class VendaIniciarServlet extends HttpServlet{
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-
-        String nome = request.getParameter("nome");
-        String email = request.getParameter("email");
-        String cpf = request.getParameter("cpf");
-        String tipoPessoa = request.getParameter("tipoPessoa");
-        String celular = request.getParameter("celular");
-        String nascimento = request.getParameter("nascimento");
-        String id = request.getParameter("id");
         
-        Cliente cliente = new Cliente(nome,email,cpf,tipoPessoa,celular,nascimento, id);
-        boolean ok = ClienteDAO.cadastrarCliente(cliente);
+        String idCli = request.getParameter("idCli");
+        String idFunc = request.getParameter("idFunc");
+        String data = request.getParameter("data");
+        String filial = request.getParameter("filial");
+        String pagamento = request.getParameter("pagamento");
+        String idProd = request.getParameter("idProd");
+        String quantidade = request.getParameter("quantiade");
+        
+
+
+        Pedido pedido = new Pedido(idCli, idFunc, 0, data, filial, pagamento, idProd, quantidade);
+        boolean ok = PedidoDAO.cadastrarPedido(pedido);
         PrintWriter out = response.getWriter();
 
         String url = "";
@@ -52,7 +56,7 @@ public class VendaIniciarServlet extends HttpServlet{
         }
         RequestDispatcher dispatcher = getServletContext().getRequestDispatcher(url);
             dispatcher.forward(request,response);
-       
+
 
     }
 

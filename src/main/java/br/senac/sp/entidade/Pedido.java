@@ -21,9 +21,24 @@ public class Pedido {
     private String data;
     private String filial;
     private String formaPagamento;
-    private List<ItemPedido> listaItens;
-
-    public Pedido(String id, String codCliente, String codFuncionario, double valorTotal, String data, String filial, String formaPagamento, List<ItemPedido> listaItens) {
+    private String codProd;
+    private String quantidade;
+    //private List<ItemPedido> listaItens;
+    
+    
+    //construtor sem id pois o banco gera ele
+    public Pedido(String codCliente, String codFuncionario, double valorTotal, String data, String filial, String formaPagamento, String codProd, String quantidade) {
+        this.codCliente = codCliente;
+        this.codFuncionario = codFuncionario;
+        this.valorTotal = valorTotal;
+        this.data = data;
+        this.filial = filial;
+        this.formaPagamento = formaPagamento;
+        this.codProd = codProd;
+        this.quantidade = quantidade;
+    }
+    // com id
+    public Pedido(String id, String codCliente, String codFuncionario, double valorTotal, String data, String filial, String formaPagamento, String codProd, String quantidade) {
         this.id = id;
         this.codCliente = codCliente;
         this.codFuncionario = codFuncionario;
@@ -31,8 +46,11 @@ public class Pedido {
         this.data = data;
         this.filial = filial;
         this.formaPagamento = formaPagamento;
-        this.listaItens = new ArrayList<ItemPedido>();
+        this.codProd = codProd;
+        this.quantidade = quantidade;
     }
+    
+    
 
     public String getId() {
         return id;
@@ -59,12 +77,7 @@ public class Pedido {
     }
 
     public double getValorTotal() {
-        double valor = 0;
-        for (ItemPedido i : listaItens) {
-            valor += i.getQuantidade() * i.getValor();
-        }
-
-        return valor;
+        return valorTotal;
     }
 
     public void setValorTotal(double valorTotal) {
@@ -95,12 +108,22 @@ public class Pedido {
         this.formaPagamento = formaPagamento;
     }
 
-    public List<ItemPedido> getListaItens() {
-        return listaItens;
+    public String getCodProd() {
+        return codProd;
     }
 
-    public void setListaItens(List<ItemPedido> listaItens) {
-        this.listaItens = listaItens;
+    public void setCodProd(String codProd) {
+        this.codProd = codProd;
     }
+
+    public String getQuantidade() {
+        return quantidade;
+    }
+
+    public void setQuantidade(String quantidade) {
+        this.quantidade = quantidade;
+    }
+    
+    
 
 }

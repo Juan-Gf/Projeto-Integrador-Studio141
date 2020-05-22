@@ -1,0 +1,68 @@
+CREATE TABLE cliente (
+   id INT not null primary key
+        GENERATED ALWAYS AS IDENTITY
+        (START WITH 1, INCREMENT BY 1),
+   nome VARCHAR(255),
+   email VARCHAR(255),
+    cpf VARCHAR(15),
+    tipoPessoa VARCHAR(15),
+    celular VARCHAR(20),
+    nascimento VARCHAR(15)
+);
+
+CREATE TABLE funcionario (
+   id INT not null primary key
+        GENERATED ALWAYS AS IDENTITY
+        (START WITH 1, INCREMENT BY 1),
+   nome VARCHAR(255),
+   senha VARCHAR(255),
+    email VARCHAR(255),
+    setor VARCHAR(20),
+    codFilial VARCHAR(255),
+    status VARCHAR(20)
+);
+
+CREATE TABLE produto (
+   id INT not null primary key
+        GENERATED ALWAYS AS IDENTITY
+        (START WITH 1, INCREMENT BY 1),
+   nome VARCHAR(255),
+   categoria VARCHAR(255),
+    tipo VARCHAR(255),
+    descricao VARCHAR(255),
+    quantidade VARCHAR(255) ,
+    preco VARCHAR(255)
+);
+CREATE TABLE pedido(
+   id INT not null primary key
+        GENERATED ALWAYS AS IDENTITY
+        (START WITH 1, INCREMENT BY 1),
+   idCli INT,
+   idFunc INT,
+    valorTotal VARCHAR(255),
+    dataPedido VARCHAR(255),
+    filial VARCHAR(255) ,
+    formaPagamento VARCHAR(255),
+    idProd int,
+    quantiade int,
+    //listaItens VARCHAR(255),
+    FOREIGN KEY(idProd) REFERENCES produto(id),	
+    FOREIGN KEY(idCli) REFERENCES cliente(id),
+    FOREIGN KEY(idFunc) REFERENCES funcionario(id)	
+);
+
+CREATE TABLE itempedido(
+   id INT not null primary key
+   GENERATED ALWAYS AS IDENTITY
+   (START WITH 1, INCREMENT BY 1),
+   idProd int,
+   valor VARCHAR(255),
+    quantidade VARCHAR(255),
+    idPed int,
+    FOREIGN KEY(idPed) REFERENCES pedido(id),
+    FOREIGN KEY(idProd) REFERENCES produto(id)	
+);
+
+//adicionar filial no produto
+
+

@@ -13,7 +13,7 @@
     </head>
     <body>
 
-        <form method="POST" action="AlterarClientes" name="frmAddUser">
+        <form action="AlterarClientes" method="POST">
             Nome:<input type="text" name="nome" value="<c:out value="${cliente.nome}" />" /><br>
             Email:<input type="text" name="email" value="<c:out value="${cliente.email}" />" /><br>
             Cpf: <input type="text" name="cpf" value="<c:out value="${cliente.cpf}" />" /><br>

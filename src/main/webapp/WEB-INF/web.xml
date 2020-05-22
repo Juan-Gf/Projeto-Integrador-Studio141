@@ -80,6 +80,43 @@
         <servlet-name>DeletarProdutoServlet</servlet-name>
         <url-pattern>/DeletarProdutoServlet</url-pattern>
     </servlet-mapping>
+    
+    <servlet>
+        <servlet-name>AlterarCliente2</servlet-name>
+        <servlet-class>br.senac.sp.servlet.AlterarCliente2</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>AlterarCliente2</servlet-name>
+        <url-pattern>/AlterarCliente2</url-pattern>
+    </servlet-mapping>
+    
+    <servlet>
+        <servlet-name>ListarClientesVenda</servlet-name>
+        <servlet-class>br.senac.sp.servlet.ListarClientesVenda</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>ListarClientesVenda</servlet-name>
+        <url-pattern>/ListarClientesVenda</url-pattern>
+    </servlet-mapping>
+    
+    <servlet>
+        <servlet-name>ListarProdutosVenda</servlet-name>
+        <servlet-class>br.senac.sp.servlet.ListarProdutosVenda</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>ListarProdutosVenda</servlet-name>
+        <url-pattern>/ListarProdutosVenda</url-pattern>
+    </servlet-mapping>
+    
+    <servlet>
+        <servlet-name>VendaIniciarServlet</servlet-name>
+        <servlet-class>br.senac.sp.servlet.VendaIniciarServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>VendaIniciarServlet</servlet-name>
+        <url-pattern>/VendaIniciarServlet</url-pattern>
+    </servlet-mapping>
+    
     <session-config>
         <session-timeout>
             30
