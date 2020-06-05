@@ -8,6 +8,7 @@ package br.senac.sp.dao;
 import br.senac.sp.db.ConexaoDB;
 import br.senac.sp.entidade.Cliente;
 import br.senac.sp.entidade.Funcionario;
+import br.senac.sp.entidade.Produto;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -21,69 +22,71 @@ import java.util.logging.Logger;
  *
  * @author DiogoSouza
  */
-public class FuncionarioDAO {
+public class ProdutoDAO {
 
-    public static boolean cadastrarFuncionario(Funcionario funcionario) {
+    public static boolean cadastrarProduto(Produto produto) {
         boolean ok = false;
         Connection con;
         try {
             con = ConexaoDB.getConexao();
-            String sql = "insert into funcionario values (default,?,?,?,?,?,?)";
+            String sql = "insert into produto values (default,?,?,?,?,?,?)";
             PreparedStatement ps = con.prepareStatement(sql);
-            ps.setString(1, funcionario.getNome());
-            ps.setString(2, funcionario.getSenha());
-            ps.setString(3, funcionario.getEmail());
-            ps.setString(4, funcionario.getSetor());
-            ps.setString(5, funcionario.getCodFilial());
-            ps.setString(6, funcionario.getStatus());
+            ps.setString(1, produto.getNome());
+            ps.setString(2, produto.getCategoria());
+            ps.setString(3, produto.getTipo());
+            ps.setString(4, produto.getDescricao());
+            ps.setString(5, produto.getQuantidade());
+            ps.setString(6, produto.getPreco());
             ps.execute();
+
             ok = true;
         } catch (SQLException ex) {
-            Logger.getLogger(FuncionarioDAO.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(ClienteDAO.class
+                    .getName()).log(Level.SEVERE, null, ex);
         }
         return ok;
     }
 
-    public static List<Funcionario> listarFuncionarios() {
-        List<Funcionario> funcionarios = new ArrayList<>();
+    public static List<Produto> listarProdutos() {
+        List<Produto> produtos = new ArrayList<>();
         boolean ok = false;
         Connection con;
         try {
             con = ConexaoDB.getConexao();
-            String sql = "select * from funcionario";
+            String sql = "select * from produto";
             PreparedStatement ps = con.prepareStatement(sql);
             ResultSet rs = ps.executeQuery();
             while (rs.next()) {
 
-                String nome = rs.getString("nome");
-                String senha = rs.getString("senha");
-                String email = rs.getString("email");
-                String setor = rs.getString("setor");
-                String codFilial = rs.getString("codFilial");
-                String status = rs.getString("status");
                 String id = rs.getString("id");
+                String nome = rs.getString("nome");
+                String categoria = rs.getString("categoria");
+                String tipo = rs.getString("tipo");
+                String descricao = rs.getString("descricao");
+                String quantidade = rs.getString("quantidade");
+                String preco = rs.getString("preco");
 
-                funcionarios.add(new Funcionario(nome, senha, email, setor, codFilial, status, id));
+                produtos.add(new Produto(id, nome, categoria, tipo, descricao, quantidade, preco));
             }
         } catch (SQLException ex) {
             Logger.getLogger(FuncionarioDAO.class
                     .getName()).log(Level.SEVERE, null, ex);
         }
-        return funcionarios;
+        return produtos;
     }
     
-    public static boolean excluirFuncionario(int id) {
+    public static boolean excluirProduto(int id) {
         boolean ok = false;
         Connection con;
         try {
             con = ConexaoDB.getConexao();
-            String sql = ("delete from funcionario where id = ?");
+            String sql = ("delete from produto where id = ?");
             PreparedStatement ps = con.prepareStatement(sql);
             ps.setInt(1, id);
             ps.executeUpdate();
             ok = true;
         } catch (SQLException ex) {
-            Logger.getLogger(FuncionarioDAO.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(ProdutoDAO.class.getName()).log(Level.SEVERE, null, ex);
         }
         return ok;
     }

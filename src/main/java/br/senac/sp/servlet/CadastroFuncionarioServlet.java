@@ -39,15 +39,16 @@ public class CadastroFuncionarioServlet extends HttpServlet {
         String setor = request.getParameter("setor");
         String codFilial = request.getParameter("codFilial");
         String status = request.getParameter("status");
+        String id = request.getParameter("id");
 
-        Funcionario funcionario = new Funcionario(nome, senha, email, setor, codFilial, status);
+        Funcionario funcionario = new Funcionario(nome, senha, email, setor, codFilial, status, id);
         boolean ok = FuncionarioDAO.cadastrarFuncionario(funcionario);
         PrintWriter out = response.getWriter();
 
         String url = "";
         if (ok) {
             request.setAttribute("cadastroOK", true);
-            url = "/sucesso2.jsp";
+            url = "/sucesso.jsp";
         } else {
             url = "/erro.jsp";
         }

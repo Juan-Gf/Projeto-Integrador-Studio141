@@ -4,9 +4,17 @@
         <servlet-name>CadastroClienteServlet</servlet-name>
         <servlet-class>br.senac.sp.servlet.CadastroClienteServlet</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>ListarClientes</servlet-name>
+        <servlet-class>br.senac.sp.servlet.ListarClientes</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>CadastroClienteServlet</servlet-name>
         <url-pattern>/CadastroClienteServlet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ListarClientes</servlet-name>
+        <url-pattern>/ListarClientes</url-pattern>
     </servlet-mapping>
     <servlet>
         <servlet-name>CadastroFuncionarioServlet</servlet-name>
@@ -16,6 +24,99 @@
         <servlet-name>CadastroFuncionarioServlet</servlet-name>
         <url-pattern>/CadastroFuncionarioServlet</url-pattern>
     </servlet-mapping>
+    <servlet>
+        <servlet-name>DeletarClienteServlet</servlet-name>
+        <servlet-class>br.senac.sp.servlet.DeletarClienteServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>DeletarClienteServlet</servlet-name>
+        <url-pattern>/DeletarClienteServlet</url-pattern>
+    </servlet-mapping>
+    <servlet>
+        <servlet-name>AlterarClientes</servlet-name>
+        <servlet-class>br.senac.sp.servlet.AlterarClientes</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>AlterarClientes</servlet-name>
+        <url-pattern>/AlterarClientes</url-pattern>
+    </servlet-mapping>
+    <servlet>
+        <servlet-name>ListarFuncionarios</servlet-name>
+        <servlet-class>br.senac.sp.servlet.ListarFuncionarios</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>ListarFuncionarios</servlet-name>
+        <url-pattern>/ListarFuncionarios</url-pattern>
+    </servlet-mapping>
+    <servlet>
+        <servlet-name>DeletarFuncionarioServlet</servlet-name>
+        <servlet-class>br.senac.sp.servlet.DeletarFuncionarioServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>DeletarFuncionarioServlet</servlet-name>
+        <url-pattern>/DeletarFuncionarioServlet</url-pattern>
+    </servlet-mapping>
+    <servlet>
+        <servlet-name>CadastroProdutoServlet</servlet-name>
+        <servlet-class>br.senac.sp.servlet.CadastroProdutoServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>CadastroProdutoServlet</servlet-name>
+        <url-pattern>/CadastroProdutoServlet</url-pattern>
+    </servlet-mapping>
+    <servlet>
+        <servlet-name>ListarProdutos</servlet-name>
+        <servlet-class>br.senac.sp.servlet.ListarProdutos</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>ListarProdutos</servlet-name>
+        <url-pattern>/ListarProdutos</url-pattern>
+    </servlet-mapping>
+    <servlet>
+        <servlet-name>DeletarProdutoServlet</servlet-name>
+        <servlet-class>br.senac.sp.servlet.DeletarProdutoServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>DeletarProdutoServlet</servlet-name>
+        <url-pattern>/DeletarProdutoServlet</url-pattern>
+    </servlet-mapping>
+    
+    <servlet>
+        <servlet-name>AlterarCliente2</servlet-name>
+        <servlet-class>br.senac.sp.servlet.AlterarCliente2</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>AlterarCliente2</servlet-name>
+        <url-pattern>/AlterarCliente2</url-pattern>
+    </servlet-mapping>
+    
+    <servlet>
+        <servlet-name>ListarClientesVenda</servlet-name>
+        <servlet-class>br.senac.sp.servlet.ListarClientesVenda</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>ListarClientesVenda</servlet-name>
+        <url-pattern>/ListarClientesVenda</url-pattern>
+    </servlet-mapping>
+    
+    <servlet>
+        <servlet-name>ListarProdutosVenda</servlet-name>
+        <servlet-class>br.senac.sp.servlet.ListarProdutosVenda</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>ListarProdutosVenda</servlet-name>
+        <url-pattern>/ListarProdutosVenda</url-pattern>
+    </servlet-mapping>
+    
+    <servlet>
+        <servlet-name>VendaIniciarServlet</servlet-name>
+        <servlet-class>br.senac.sp.servlet.VendaIniciarServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>VendaIniciarServlet</servlet-name>
+        <url-pattern>/VendaIniciarServlet</url-pattern>
+    </servlet-mapping>
+    
     <session-config>
         <session-timeout>
             30

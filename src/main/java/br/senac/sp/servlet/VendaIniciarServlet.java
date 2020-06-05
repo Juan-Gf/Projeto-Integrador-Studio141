@@ -1,7 +1,14 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
 package br.senac.sp.servlet;
 
 import br.senac.sp.dao.ClienteDAO;
+import br.senac.sp.dao.PedidoDAO;
 import br.senac.sp.entidade.Cliente;
+import br.senac.sp.entidade.Pedido;
 import java.io.IOException;
 import java.io.PrintWriter;
 import javax.servlet.RequestDispatcher;
@@ -10,10 +17,11 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-
-public class CadastroClienteServlet extends HttpServlet {
-//Basicamente você utiliza o método doGet sempre que a requisição que você faz 
-    //não altere o estado do servidor, como uma consulta, uma busca e etc.
+/**
+ *
+ * @author DiogoSouza
+ */
+public class VendaIniciarServlet extends HttpServlet{
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
@@ -24,17 +32,19 @@ public class CadastroClienteServlet extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-
-        String nome = request.getParameter("nome");
-        String email = request.getParameter("email");
-        String cpf = request.getParameter("cpf");
-        String tipoPessoa = request.getParameter("tipoPessoa");
-        String celular = request.getParameter("celular");
-        String nascimento = request.getParameter("nascimento");
-        String id = request.getParameter("id");
         
-        Cliente cliente = new Cliente(nome,email,cpf,tipoPessoa,celular,nascimento, id);
-        boolean ok = ClienteDAO.cadastrarCliente(cliente);
+        String idCli = request.getParameter("idCli");
+        String idFunc = request.getParameter("idFunc");
+        String data = request.getParameter("data");
+        String filial = request.getParameter("filial");
+        String pagamento = request.getParameter("pagamento");
+        String idProd = request.getParameter("idProd");
+        String quantidade = request.getParameter("quantiade");
+        
+
+
+        Pedido pedido = new Pedido(idCli, idFunc, 0, data, filial, pagamento, idProd, quantidade);
+        boolean ok = PedidoDAO.cadastrarPedido(pedido);
         PrintWriter out = response.getWriter();
 
         String url = "";
@@ -46,7 +56,7 @@ public class CadastroClienteServlet extends HttpServlet {
         }
         RequestDispatcher dispatcher = getServletContext().getRequestDispatcher(url);
             dispatcher.forward(request,response);
-       
+
 
     }
 
@@ -59,5 +69,4 @@ public class CadastroClienteServlet extends HttpServlet {
     public String getServletInfo() {
         return "Short description";
     }// </editor-fold>
-
 }
