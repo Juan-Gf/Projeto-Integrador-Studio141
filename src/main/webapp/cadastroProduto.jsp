@@ -20,7 +20,7 @@
                 Tipo: <input type="text" name="tipo"/><br>
                 Descricao: <input type="text" name="descricao"/><br>
                 Quantidade: <input type="text" name="quantidade"/><br>
-                Preco: <input type="text" nome="preco"/><br> 
+                Preco: <input type="text" name="preco"/><br> 
                 <button type="submit" >Enviar</button>
             </form>
         </h1>
