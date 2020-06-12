@@ -12,17 +12,24 @@
         <title>Cadastrar Produto</title>
     </head>
     <body>
-        <h1>
-            <h1>Formulário de Cadastro</h1>
-            <form action="CadastroProdutoServlet" method="POST">
-                Nome:<input type="text" name="nome"/><br>
-                Categoria: <input type="text" name="categoria"/><br>
-                Tipo: <input type="text" name="tipo"/><br>
-                Descricao: <input type="text" name="descricao"/><br>
-                Quantidade: <input type="text" name="quantidade"/><br>
-                Preco: <input type="text" name="preco"/><br> 
-                <button type="submit" >Enviar</button>
-            </form>
-        </h1>
+        <h1>Studio 141</h1>
+
+        <a href="clienteMain.jsp">Tela de Clientes</a>
+        <a href="funcionarioMain.jsp">Tela de Funcionarios</a>
+        <a href="produtosMain.jsp">Tela de Produtos</a>
+        <a href="ListarClientesVenda">Iniciar Venda</a>
+
+
+        <h1>Formulário de Cadastro</h1>
+        <form action="CadastroProdutoServlet" method="POST">
+            Nome:<input type="text" name="nome"/><br>
+            Categoria: <input type="text" name="categoria"/><br>
+            Tipo: <input type="text" name="tipo"/><br>
+            Descricao: <input type="text" name="descricao"/><br>
+            Quantidade: <input type="text" name="quantidade"/><br>
+            Preco: <input type="text" name="preco"/><br> 
+            <button type="submit" >Enviar</button>
+        </form>
+
     </body>
 </html>
