@@ -13,7 +13,13 @@
         <title>Lista de Clientes</title>
     </head>
     <body>
-
+        <h1>Studio 141</h1>
+        <form>
+            <a href="clienteMain.jsp">Tela de Clientes</a>
+            <a href="funcionarioMain.jsp">Tela de Funcionarios</a>
+            <a href="produtosMain.jsp">Tela de Produtos</a>
+            <a href="ListarClientesVenda">Iniciar Venda</a>
+        </form>
         <table border="15">
             <th>Nome</th>
             <th>Email</th>

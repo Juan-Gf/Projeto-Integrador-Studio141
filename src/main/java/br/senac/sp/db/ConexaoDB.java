@@ -19,18 +19,22 @@ public class ConexaoDB {
 
     static {
         try {
-            Class.forName("org.apache.derby.jdbc.EmbeddedDriver");
+            Class.forName("com.mysql.cj.jdbc.Driver");
         } catch (ClassNotFoundException ex) {
             Logger.getLogger(ConexaoDB.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
 
     public static Connection getConexao() throws SQLException {
-        String dbURL = "jdbc:derby://localhost:1527/studio141;create=true";
-        String user = "studio141";
-        String password = "studio141";
+        String dbURL = "jdbc:mysql://uqooyrojat3oywrf:dUuVU9qOYYkt5ZEqJfwr@by56zwxzttzfu7unltz8-mysql.services.clever-cloud.com:3306/by56zwxzttzfu7unltz8?useSSL=false";                   
+        //jdbc:mysql://mystudio141.c7etqmlh3mnt.us-east-1.rds.amazonaws.com:3306/?user=root
+        //"jdbc:mysql://mystudio141.c7etqmlh3mnt.us-east-1.rds.amazonaws.com:3306/studio141?useSSL=false" // arthur
+        //"jdbc:mysql://mystudio141.c7etqmlh3mnt.us-east-1.rds.amazonaws.com:3306/studio141?useTimezone=true&serverTimezone=UTC"
+        //jdbc:mysql://mystudio141.c7etqmlh3mnt.us-east-1.rds.amazonaws.com:3306/studio141?zeroDateTimeBehavior=CONVERT_TO_NULL
+        String user = "uqooyrojat3oywrf";
+        String password = "dUuVU9qOYYkt5ZEqJfwr";
 
         return DriverManager.getConnection(dbURL, user, password);
     }
-
 }
+
