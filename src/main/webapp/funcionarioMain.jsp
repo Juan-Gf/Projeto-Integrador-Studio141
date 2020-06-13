@@ -33,7 +33,7 @@
 
             <ul class="menu">
                 <h1>Menu Funcionarios</h1>
-                <a href="cadastroFuncionario.jsp">
+                <a href="CadastroFuncionario.jsp">
                     <li><h2>Cadastrar Funcionário</h2><img src="NewCliente.png"></li>
                 </a>
                 <a href="ListarFuncionarios">
