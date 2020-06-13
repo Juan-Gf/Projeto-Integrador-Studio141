@@ -32,7 +32,7 @@
         <main>
 
             <h1>Editar Dados</h1>
-            <form action="CadastroClienteServlet" method="POST">
+            <form action="AlterarClientes" method="POST">
 
                 <label>Nome</label>
                 <input type="text" name="nome" class="input-padrao"
@@ -62,7 +62,7 @@
                 class="input-padrao" value="<c:out value="${cliente.nascimento}" />">
 
                 <button type="submit" class="enviar">Gravar dados</button>
-
+            </form>
         </main>
         <footer>
             <img src="Logo-Studio.png" alt="Logo Studio" class="logo">

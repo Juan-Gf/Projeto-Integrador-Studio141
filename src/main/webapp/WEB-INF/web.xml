@@ -117,6 +117,15 @@
         <url-pattern>/VendaIniciarServlet</url-pattern>
     </servlet-mapping>
     
+    <servlet>
+        <servlet-name>ListarClienteComCPF</servlet-name>
+        <servlet-class>br.senac.sp.servlet.ListarClienteComCPF</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>ListarClienteComCPF</servlet-name>
+        <url-pattern>/ListarClienteComCPF</url-pattern>
+    </servlet-mapping>
+    
     <session-config>
         <session-timeout>
             30
