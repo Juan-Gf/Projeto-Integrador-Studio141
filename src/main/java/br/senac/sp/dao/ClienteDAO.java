@@ -120,8 +120,14 @@ public class ClienteDAO {
         Connection con;
         try {
             con = ConexaoDB.getConexao();
-            String sql = "update cliente set nome=?, email=?, cpf=?, "
-                    + "tipoPessoa=?, celular=?, nascimento=? where id=?";
+            String sql = "update cliente set"
+                    + " nome=?,"
+                    + " email=?,"
+                    + " cpf=?, "
+                    + "tipoPessoa=?,"
+                    + " celular=?,"
+                    + " nascimento=? "
+                    + "where id=?";
             PreparedStatement ps = con.prepareStatement(sql);
             ps.setString(1, cliente.getNome());
             ps.setString(2, cliente.getEmail());
