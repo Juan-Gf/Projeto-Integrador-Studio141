@@ -37,7 +37,7 @@
                 <input type="password" name="senha" class="input-padrao"
                 required="required">
                 
-                <label>Email</label>
+                <label>E-mail</label>
                 <input type="email" name="email" class="input-padrao" 
                 required="required">
                 
