@@ -4,24 +4,60 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Cadastro de Cliente</title>
+        <link rel="stylesheet" href="reset.css">
+        <link rel="stylesheet" href="style.css">
     </head>
     <body>
-        <h1>Studio 141</h1>
-        <form>
-            <a href="clienteMain.jsp">Tela de Clientes</a>
-            <a href="funcionarioMain.jsp">Tela de Funcionarios</a>
-            <a href="produtosMain.jsp">Tela de Produtos</a>
-            <a href="ListarClientesVenda">Iniciar Venda</a>
-        </form>
-        <h1>Formulário de Cadastro</h1>
-        <form action="CadastroClienteServlet" method="POST">
-            Nome:<input type="text" name="nome"/><br>
-            Email:<input type="text" name="email"/><br>
-            Cpf: <input type="text" name="cpf"/><br>
-            Tipo de Pessoa: <input type="text" name="tipoPessoa"/><br>
-            Celular: <input type="text" name="celular" required size="14"/><br>
-            Nascimento: <input type="text" name="nascimento" required size="11"/><br> 
-            <button type="submit" >Enviar</button>
-        </form>
+       <header>
+            <div class="caixa">
+                <img src="Logo-Studio.png" alt="Logo Studio" class="logo">
+                <nav>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="clienteMain.jsp">Clientes</a></li>
+                        <li><a href="funcionarioMain.jsp">Funcionarios</a></li>
+                        <li><a href="produtosMain.jsp">Produtos</a></li>
+                        <li><a href="ListarClientesVenda">Venda</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </header>
+        <main>
+            <h1>Formulário de Cadastro</h1>
+            <form action="CadastroClienteServlet" method="POST">
+                
+                <label>Nome</label>
+                <input type="text" name="nome" class="input-padrao" required="required"
+                pattern="[A-Za-záàâãéèêíïóôõöúçñÁÀÂÃÉÈÍÏÓÔÕÖÚÇÑ ]+$"> 
+                
+                <label>Email</label>
+                <input type="email" name="email" class="input-padrao"  
+                placeholder="seuemail@dominio.com" required="required"> 
+                
+                <label>Cpf</label>
+                <input type="numbers" name="cpf" class="input-padrao" maxlength="11" 
+                placeholder="XXX.XXX.XXX-XX" required="required" pattern="[0-9]+$"> 
+                
+                <label>Tipo de Pessoa</label>
+                <select name="tipoPessoa" >
+                    <option>Fisica</option>
+                    <option>Juridica</option>
+                </select>
+                
+                <label>Celular</label>
+                <input type="tel" name="celular" class="input-padrao" maxlength="11"
+                placeholder="(XX)XXXXX-XXXX" required="required" pattern="[0-9]+$">
+                
+                <label>Nascimento</label>
+                <input type="date" name="nascimento" size="11" 
+                placeholder="DD/MM/AAA" class="input-padrao" required="required">
+                
+                <button type="submit" class="enviar">Salvar dados</button>
+            </form>
+        </main>
+        
+        <footer>
+            <img src="Logo-Studio.png" alt="Logo Studio" class="logo">
+        </footer>
     </body>
 </html>

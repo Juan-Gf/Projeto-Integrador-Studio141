@@ -10,18 +10,44 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Tela de Produtos</title>
+        <link rel="stylesheet" href="reset.css">
+        <link rel="stylesheet" href="style.css">
     </head>
     <body>
-        <h1>Studio 141</h1>
-        <form>
-            <a href="clienteMain.jsp">Tela de Clientes</a>
-            <a href="funcionarioMain.jsp">Tela de Funcionarios</a>
-            <a href="produtosMain.jsp">Tela de Produtos</a>
-            <a href="ListarClientesVenda">Iniciar Venda</a>
-        </form>
-        <h1>Menu</h1>
-        <a href="cadastroProduto.jsp">Cadastrar Produto</a><br/>
-        <a href="ListarProdutos">Listar Produtos</a><br/>
-        <a href="deletarProduto.jsp">Deletar Produto</a><br/>
+        <header>
+            <div class="caixa">
+                <img src="Logo-Studio.png" alt="Logo Studio" class="logo">
+
+                <nav>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="clienteMain.jsp">Clientes</a></li>
+                        <li><a href="funcionarioMain.jsp">Funcionarios</a></li>
+                        <li><a href="produtosMain.jsp">Produtos</a></li>
+                        <li><a href="ListarClientesVenda">Venda</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </header>
+        <main class="opcoes">
+           
+            <ul class="menu">
+                <h1>Menu Produtos</h1>
+                <a href="cadastroProduto.jsp">
+                    <li><h2>Cadastrar</h2><img src="Newproduto.png"></li>
+                </a>
+                <a href="ListarProdutos">
+                    <li><h2>Lista Produtos</h2><img src="lista.png"></li>
+                </a>
+                <a href="deletarProduto.jsp">
+                    <li><h2>Deletar</h2><img src="lixo.png"></li>
+                </a>
+            </ul>
+
+        </main>
+        
+         <footer>
+            <img src="Logo-Studio.png" alt="Logo Studio" class="logo">
+        </footer>
     </body>
 </html>

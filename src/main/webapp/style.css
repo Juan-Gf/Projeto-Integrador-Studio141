@@ -1,0 +1,174 @@
+
+html{
+    height: 100%;
+}
+
+.logo {
+    width: 30%;
+}
+
+body {
+    background: white;
+    height: 100%;
+}
+
+header {
+    width: 100%;
+    background: #000000;
+    margin: 0 auto;
+}
+ul{
+    display: inline-block;
+    vertical-align: top;
+}
+nav li {
+    display: inline;
+    margin: 0 0 0 15px;
+}	
+nav {
+    position: absolute;
+    top: 110px;
+    right:0px;
+}
+nav a {
+    text-transform: uppercase;
+    font-size: 16px;
+    font-weight: bold;
+    text-decoration: none;
+    color: white;
+}
+nav a:hover{
+    color: #0278C1A3;
+    text-decoration: underline;
+}
+.caixa {
+    position: relative;
+    width: 940px;
+    margin: 0 auto;
+    padding: 20px 0;
+}
+
+main {
+    width: 940px;
+    margin: 0 auto;
+}
+main h1 {
+    margin: 50px 0;
+    font-size: 40px;
+    font-weight: bold;
+}
+
+.menu {
+    width: 940px;
+    margin: 0 auto;
+    padding: 50px;
+}
+
+.menu h1{
+    padding-bottom: 20px; 
+    font-size: 40px;
+    font-weight: bold;
+    text-align: center;
+}
+.menu li {
+    display: inline-block;
+    text-align: center;
+    width: 30%;
+    vertical-align: top;
+    padding: 30px 20px;
+    margin: 0 1.5%;
+    box-sizing: border-box;
+    border: 3px solid #000000;
+    border-radius: 15px;
+}
+.menu li:hover {
+    border-color: #0278C1A3;
+}
+
+.menu li:hover h2 {
+    font-size: 34px;
+}
+.menu h2 {
+    font-size: 30px; 
+    font-weight: bold;
+    padding: 10px;
+}
+a{
+    text-decoration: none;
+}
+
+form {
+    margin: 50px 0;
+}
+form label {
+    color: black;
+    display: block;
+    font-size: 23px;
+    margin: 0 0 10px;
+}
+form legend {
+    display: block;
+    font-size: 20px;
+    margin: 0 0 10px;
+}
+.input-padrao, form textarea, button{
+    display: block;
+    margin: 0 0 20px;
+    padding: 8px 3px;
+    width: 30%;
+}
+.checkbox {
+    margin: 20px 0;
+}
+
+.enviar {
+    width: 20%;
+    background: black;
+    padding: 15px 0;
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+    border: none;
+    border-radius: 5px;
+    transition: 1s background;
+}
+.enviar:hover {
+    background: #CCCCCC;
+}
+
+footer {
+    text-align: center;
+    background: black;
+    padding: 20px;
+    color: white;
+}
+
+select{
+    display: block;
+    margin: 0 0 20px;
+    padding: 8px 3px;
+    width: 20%;
+}
+
+.opcoes h1{
+    margin: 35px 0 20px 0;
+    font-size: 40px;
+    font-weight: bold;
+}
+
+table {
+	margin: 20px 0 40px; 
+}
+
+thead {
+	background: black;
+	color: white;
+	font-weight: bold;
+
+}
+
+th, td {
+	border: 1px solid #000000;
+	padding: 8px 13px;
+}

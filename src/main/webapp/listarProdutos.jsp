@@ -10,27 +10,40 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Lista de Produtos</title>
+        <link rel="stylesheet" href="reset.css">
+        <link rel="stylesheet" href="style.css">
     </head>
     <body>
-        <h1>Studio 141</h1>
-        <form>
-            <a href="clienteMain.jsp">Tela de Clientes</a>
-            <a href="funcionarioMain.jsp">Tela de Funcionarios</a>
-            <a href="produtosMain.jsp">Tela de Produtos</a>
-            <a href="ListarClientesVenda">Iniciar Venda</a>
-        </form>
-        <table border="15">
-            <th>ID</th>
-            <th>Nome</th>
-            <th>Categoria</th>
-            <th>Tipo</th>
-            <th>Descrição</th>
-            <th>Quantidade</th>
-            <th>Preço</th>
-            <th>Alterar</th>
+       <header>
+            <div class="caixa">
+                <img src="Logo-Studio.png" alt="Logo Studio" class="logo">
 
-            <c:forEach var="c" items="${produtos}">
-                <tr>
+                <nav>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="clienteMain.jsp">Clientes</a></li>
+                        <li><a href="funcionarioMain.jsp">Funcionarios</a></li>
+                        <li><a href="produtosMain.jsp">Produtos</a></li>
+                        <li><a href="ListarClientesVenda">Venda</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </header>
+        <main>
+            <h1>Registro de produtos</h1>
+        <table>
+            <thead>
+                <th>ID</th>
+                <th>Nome</th>
+                <th>Categoria</th>
+                <th>Tipo</th>
+                <th>Descrição</th>
+                <th>Quantidade</th>
+                <th>Preço</th>
+                <th>Alterar</th>
+                <c:forEach var="c" items="${produtos}">
+            <thead>
+            <tbody>               
                     <td>${c.id}</td>
                     <td>${c.nome}</td>
                     <td>${c.categoria}</td>
@@ -38,12 +51,14 @@
                     <td>${c.descricao}</td>
                     <td>${c.quantidade}</td>
                     <td>${c.preco}</td>
-
-                </tr>
-            </c:forEach>
-
-            <tr></tr>
+                    <td></c:forEach></td>
+        </tbody>
         </table>
-        <a href="index.html">Início</a>
+            <a href="produtosMain.jsp"><button class="enviar">Voltar
+            </button></a>
+        </main>
+         <footer>
+            <img src="Logo-Studio.png" alt="Logo Studio" class="logo">
+        </footer>
     </body>
 </html>

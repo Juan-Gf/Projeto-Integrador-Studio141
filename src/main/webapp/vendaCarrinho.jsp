@@ -10,8 +10,25 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Carrinho</title>
+        <link rel="stylesheet" href="reset.css">
+        <link rel="stylesheet" href="style.css">
     </head>
     <body>
+        <header>
+            <div class="caixa">
+                <img src="Logo-Studio.png" alt="Logo Studio" class="logo">
+
+                <nav>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="clienteMain.jsp">Clientes</a></li>
+                        <li><a href="funcionarioMain.jsp">Funcionarios</a></li>
+                        <li><a href="produtosMain.jsp">Produtos</a></li>
+                        <li><a href="ListarClientesVenda">Venda</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </header>
             <table border="15">
             <th>ID</th>
             <th>Nome</th>
@@ -36,5 +53,9 @@
 
             <tr></tr>
         </table>
+        
+         <footer>
+            <img src="Logo-Studio.png" alt="Logo Studio" class="logo">
+        </footer>
     </body>
 </html>

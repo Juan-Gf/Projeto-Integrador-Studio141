@@ -10,15 +10,25 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Iniciar Venda</title>
+        <link rel="stylesheet" href="reset.css">
+        <link rel="stylesheet" href="style.css">
     </head>
     <body>
-        <h1>Studio 141</h1>
-        <form>
-            <a href="clienteMain.jsp">Tela de Clientes</a>
-            <a href="funcionarioMain.jsp">Tela de Funcionarios</a>
-            <a href="produtosMain.jsp">Tela de Produtos</a>
-            <a href="ListarClientesVenda">Iniciar Venda</a>
-        </form>
+        <header>
+            <div class="caixa">
+                <img src="Logo-Studio.png" alt="Logo Studio" class="logo">
+
+                <nav>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="clienteMain.jsp">Clientes</a></li>
+                        <li><a href="funcionarioMain.jsp">Funcionarios</a></li>
+                        <li><a href="produtosMain.jsp">Produtos</a></li>
+                        <li><a href="ListarClientesVenda">Venda</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </header>
         <h1>Realize sua venda!</h1>
         <form method="POST" action="VendaIniciarServlet">
             ID Cliente<input type="text" name="idCli"/><br>
@@ -79,5 +89,9 @@
 
             <tr></tr>
         </table>
+        
+         <footer>
+            <img src="Logo-Studio.png" alt="Logo Studio" class="logo">
+        </footer>
     </body>
 </html>

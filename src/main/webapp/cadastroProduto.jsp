@@ -10,26 +10,59 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Cadastrar Produto</title>
+        <link rel="stylesheet" href="reset.css">
+        <link rel="stylesheet" href="style.css">
     </head>
     <body>
-        <h1>Studio 141</h1>
+     <header>
+            <div class="caixa">
+                <img src="Logo-Studio.png" alt="Logo Studio" class="logo">
 
-        <a href="clienteMain.jsp">Tela de Clientes</a>
-        <a href="funcionarioMain.jsp">Tela de Funcionarios</a>
-        <a href="produtosMain.jsp">Tela de Produtos</a>
-        <a href="ListarClientesVenda">Iniciar Venda</a>
-
-
-        <h1>Formulário de Cadastro</h1>
+                <nav>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="clienteMain.jsp">Clientes</a></li>
+                        <li><a href="funcionarioMain.jsp">Funcionarios</a></li>
+                        <li><a href="produtosMain.jsp">Produtos</a></li>
+                        <li><a href="ListarClientesVenda">Venda</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </header>
+        <main>
+        <h1>Cadastro de Produto</h1>
         <form action="CadastroProdutoServlet" method="POST">
-            Nome:<input type="text" name="nome"/><br>
-            Categoria: <input type="text" name="categoria"/><br>
+            <label>Nome</label>
+            <input type="text" name="nome" class="input-padrao" required="required"
+            pattern="[A-Za-záàâãéèêíïóôõöúçñÁÀÂÃÉÈÍÏÓÔÕÖÚÇÑ ]+$"> 
+            
+            <label>Categoria</label>
+            <select name="categoria">
+                <option>Corda</option>
+                <option>Sopro</option>
+                <option>Percussão</option>
+            </select>
+            
+            
             Tipo: <input type="text" name="tipo"/><br>
-            Descricao: <input type="text" name="descricao"/><br>
-            Quantidade: <input type="text" name="quantidade"/><br>
-            Preco: <input type="text" name="preco"/><br> 
-            <button type="submit" >Enviar</button>
+            
+            <label>Descrição</label>
+            <textarea name="descricao" rows="10" cols="7" required="required"
+                      pattern="[A-Za-záàâãéèêíïóôõöúçñÁÀÂÃÉÈÍÏÓÔÕÖÚÇÑ ]+$"></textarea>
+            
+            <label>Quantidade</label>
+            <input type="numbers" name="quantidade" class="input-padrao" 
+            required="required" pattern="[0-9]+$" maxlength="4">
+            
+            <label>Preço</label>
+            <input type="tel" required="required" maxlength="15" class="input-padrao"
+            name="preco" pattern="([0-9]{1,3}\.)?[0-9]{1,3},[0-9]{2}$" />
+ 
+            <button type="submit" class="enviar">Salvar dados</button>
         </form>
-
+        </main>
+<footer>
+            <img src="Logo-Studio.png" alt="Logo Studio" class="logo">
+        </footer>
     </body>
 </html>

@@ -10,20 +10,62 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Lista de Clientes</title>
+        <link rel="stylesheet" href="reset.css">
+        <link rel="stylesheet" href="style.css">
     </head>
     <body>
+        <header>
+            <div class="caixa">
+                <img src="Logo-Studio.png" alt="Logo Studio" class="logo">
 
-        <form action="AlterarClientes" method="POST">
-            Nome:<input type="text" name="nome" value="<c:out value="${cliente.nome}" />" /><br>
-            Email:<input type="text" name="email" value="<c:out value="${cliente.email}" />" /><br>
-            Cpf: <input type="text" name="cpf" value="<c:out value="${cliente.cpf}" />" /><br>
-            Tipo de Pessoa: <input type="text" name="tipoPessoa" value="<c:out value="${cliente.tipoPessoa}" />" /><br>
-            Celular: <input type="tel" name="celular" required size="14" value="<c:out value="${cliente.celular}" />" /><br>
-            Nascimento: <input type="text" nome="nascimento" required size="11" value="<c:out value="${cliente.nascimento}" />" /><br> 
-            <button type="submit" >Enviar</button>
-        </form>
+                <nav>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="clienteMain.jsp">Clientes</a></li>
+                        <li><a href="funcionarioMain.jsp">Funcionarios</a></li>
+                        <li><a href="produtosMain.jsp">Produtos</a></li>
+                        <li><a href="ListarClientesVenda">Venda</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </header>
+        <main>
 
+            <h1>Editar Dados</h1>
+            <form action="CadastroClienteServlet" method="POST">
 
-        <a href="index.html">Início</a>
+                <label>Nome</label>
+                <input type="text" name="nome" class="input-padrao"
+                value="<c:out value="${cliente.nome}" />"
+                pattern="[A-Za-záàâãéèêíïóôõöúçñÁÀÂÃÉÈÍÏÓÔÕÖÚÇÑ ]+$">
+
+                <label>Email</label>
+                <input type="email" name="email" class="input-padrao" 
+                value="<c:out value="${cliente.email}" />">
+
+                <label>Cpf</label>
+                <input type="numbers" name="cpf" class="input-padrao"
+                value="<c:out value="${cliente.cpf}" />" pattern="[0-9]+$">
+
+                <label>Tipo de Pessoa</label>
+                <select name="tipoPessoa" >
+                    <option>Fisica</option>
+                    <option>Juridica</option>
+                </select>
+
+                <label>Celular</label>
+                <input type="numbers" name="celular" required size="14" pattern="[0-9]+$"
+                class="input-padrao" value="<c:out value="${cliente.celular}" />">
+
+                <label>Nascimento</label>
+                <input type="date" nome="nascimento" required size="11" 
+                class="input-padrao" value="<c:out value="${cliente.nascimento}" />">
+
+                <button type="submit" class="enviar">Gravar dados</button>
+
+        </main>
+        <footer>
+            <img src="Logo-Studio.png" alt="Logo Studio" class="logo">
+        </footer>
     </body>
 </html>
