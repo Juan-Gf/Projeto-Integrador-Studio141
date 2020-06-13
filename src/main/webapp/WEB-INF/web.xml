@@ -126,6 +126,24 @@
         <url-pattern>/ListarClienteComCPF</url-pattern>
     </servlet-mapping>
     
+    <servlet>
+        <servlet-name>ListarFuncionarioComID</servlet-name>
+        <servlet-class>br.senac.sp.servlet.ListarFuncionarioComID</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>ListarFuncionarioComID</servlet-name>
+        <url-pattern>/ListarFuncionarioComID</url-pattern>
+    </servlet-mapping>
+    
+    <servlet>
+        <servlet-name>ListarProdutoComID</servlet-name>
+        <servlet-class>br.senac.sp.servlet.ListarProdutoComID</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>ListarProdutoComID</servlet-name>
+        <url-pattern>/ListarProdutoComID</url-pattern>
+    </servlet-mapping>
+    
     <session-config>
         <session-timeout>
             30

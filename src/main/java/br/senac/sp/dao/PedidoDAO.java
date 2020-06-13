@@ -88,4 +88,86 @@ public class PedidoDAO {
         return pedidos;
     }
 
+    public static List<Pedido> buscaPorIdFunc(String id) {
+        List<Pedido> pedidos = new ArrayList<>();
+        boolean ok = false;
+        Connection con;
+        try {
+            con = ConexaoDB.getConexao();
+            String sql = "SELECT pedido.id , "
+                    + "pedido.idCli, "
+                    + "pedido.idFunc, "
+                    + "valorTotal, "
+                    + "dataPedido, "
+                    + "filial, "
+                    + "formaPagamento, "
+                    + "idProd, "
+                    + "quantiade "
+                    + "FROM cliente "
+                    + "INNER JOIN pedido "
+                    + "ON cliente.id = pedido.idCli where idFunc = ?;";
+
+            PreparedStatement ps = con.prepareStatement(sql);
+            ps.setString(1, id);
+            ResultSet rs = ps.executeQuery();
+            while (rs.next()) {
+                String pedID = rs.getString("pedido.id");
+                String idCli = rs.getString("pedido.idCli");
+                String idFunc = rs.getString("pedido.idFunc");
+                double valorTotal = Double.parseDouble(rs.getString("valorTotal"));
+                String dataPedido = rs.getString("dataPedido");
+                String filial = rs.getString("filial");
+                String formaPagamento = rs.getString("formaPagamento");
+                String idProd = rs.getString("idProd");
+                String quantidade = rs.getString("quantiade");
+
+                pedidos.add(new Pedido(pedID, idCli, idFunc, valorTotal, dataPedido, filial, formaPagamento, idProd, quantidade));
+            }
+        } catch (SQLException ex) {
+            Logger.getLogger(ClienteDAO.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return pedidos;
+    }
+
+    public static List<Pedido> buscaPorIDProd(String id) {
+                List<Pedido> pedidos = new ArrayList<>();
+        boolean ok = false;
+        Connection con;
+        try {
+            con = ConexaoDB.getConexao();
+            String sql = "SELECT pedido.id , "
+                    + "pedido.idCli, "
+                    + "pedido.idFunc, "
+                    + "valorTotal, "
+                    + "dataPedido, "
+                    + "filial, "
+                    + "formaPagamento, "
+                    + "idProd, "
+                    + "quantiade "
+                    + "FROM cliente "
+                    + "INNER JOIN pedido "
+                    + "ON cliente.id = pedido.idCli where idProd = ?;";
+
+            PreparedStatement ps = con.prepareStatement(sql);
+            ps.setString(1, id);
+            ResultSet rs = ps.executeQuery();
+            while (rs.next()) {
+                String pedID = rs.getString("pedido.id");
+                String idCli = rs.getString("pedido.idCli");
+                String idFunc = rs.getString("pedido.idFunc");
+                double valorTotal = Double.parseDouble(rs.getString("valorTotal"));
+                String dataPedido = rs.getString("dataPedido");
+                String filial = rs.getString("filial");
+                String formaPagamento = rs.getString("formaPagamento");
+                String idProd = rs.getString("idProd");
+                String quantidade = rs.getString("quantiade");
+
+                pedidos.add(new Pedido(pedID, idCli, idFunc, valorTotal, dataPedido, filial, formaPagamento, idProd, quantidade));
+            }
+        } catch (SQLException ex) {
+            Logger.getLogger(ClienteDAO.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return pedidos;
+    }
+
 }

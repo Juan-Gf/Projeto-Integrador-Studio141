@@ -20,14 +20,14 @@
         </form>
 
         <h1>Relatório por ID do Funcionario</h1>
-        <form action="" method="POST">
+        <form action="ListarFuncionarioComID" method="GET">
             <legend>Por gentileza, digite ID que deseja pesquisar.</legend>
             <label>ID</label><input type="number" name="id" class="input-padrao">
             <button type="submit" class="enviar">Pesquisar</button>
         </form>
 
         <h1>Relatório por ID do Produto</h1>
-        <form action="" method="POST">
+        <form action="ListarProdutoComID" method="GET">
             <legend>Por gentileza, digite ID que deseja pesquisar.</legend>
             <label>ID</label><input type="number" name="id" class="input-padrao">
             <button type="submit" class="enviar">Pesquisar</button>
