@@ -27,7 +27,7 @@
             </div>
         </header>
         <main>
-            <h1>Cadastrar Funcionário</h1>
+            <h1>Cadastrar Funcionários</h1>
             <form action="CadastroFuncionarioServlet" method="POST">
                 <label>Nome</label>
                 <input type="text" name="nome" class="input-padrao" required="required"
