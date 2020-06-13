@@ -21,21 +21,20 @@
                 <nav>
                     <ul>
                         <li><a href="index.html">Home</a></li>
-                        <li><a href="clienteMain.jsp">Clientes</a></li>
-                        <li><a href="funcionarioMain.jsp">Funcionarios</a></li>
-                        <li><a href="produtosMain.jsp">Produtos</a></li>
-                        <li><a href="ListarClientesVenda">Venda</a></li>
+                        <li><a href="produtosMain.jsp">Voltar</a></li>
                     </ul>
                 </nav>
             </div>
         </header>
-        <h1>Deletar Produto</h1><br>
-        Por gentileza, digite ID que deseja deletar.
-
-        <form action="DeletarProdutoServlet" method="POST">
-            ID<input type="text" name="id">
-            <button type="submit">Deletar</button><br>
-        </form>
+        <main>
+             <h1>Deletar Produto</h1>
+            <form action="DeletarProdutoServlet" method="POST">
+                <legend>Por gentileza, digite ID do produto que deseja deletar.</legend>
+                <label>ID</label>
+                <input type="text" name="id" class="input-padrao">
+                <button type="submit" class="enviar">Deletar</button>
+            </form>
+        </main>
         
         <footer>
             <img src="Logo-Studio.png" alt="Logo Studio" class="logo">

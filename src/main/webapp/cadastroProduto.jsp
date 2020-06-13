@@ -21,10 +21,7 @@
                 <nav>
                     <ul>
                         <li><a href="index.html">Home</a></li>
-                        <li><a href="clienteMain.jsp">Clientes</a></li>
-                        <li><a href="funcionarioMain.jsp">Funcionarios</a></li>
-                        <li><a href="produtosMain.jsp">Produtos</a></li>
-                        <li><a href="ListarClientesVenda">Venda</a></li>
+                        <li><a href="produtosMain.jsp">Voltar</a></li>
                     </ul>
                 </nav>
             </div>
@@ -44,7 +41,8 @@
             </select>
             
             
-            Tipo: <input type="text" name="tipo"/><br>
+            <label>Tipo</label>
+            <input type="text" class="input-padrao" name="tipo"/>
             
             <label>Descrição</label>
             <textarea name="descricao" rows="10" cols="7" required="required"

@@ -31,6 +31,7 @@
             </div>
         </header>
         <main>
+            <h1>Registro de Clientes</h1>
             <table>
                 <thead>
                     <th>Nome</th>

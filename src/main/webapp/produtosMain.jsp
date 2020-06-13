@@ -22,7 +22,7 @@
                     <ul>
                         <li><a href="index.html">Home</a></li>
                         <li><a href="clienteMain.jsp">Clientes</a></li>
-                        <li><a href="funcionarioMain.jsp">Funcionarios</a></li>
+                        <li><a href="funcionarioMain.jsp">Funcionários</a></li>
                         <li><a href="produtosMain.jsp">Produtos</a></li>
                         <li><a href="ListarClientesVenda">Venda</a></li>
                     </ul>
