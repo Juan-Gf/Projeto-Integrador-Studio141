@@ -172,3 +172,37 @@ th, td {
 	border: 1px solid #000000;
 	padding: 8px 13px;
 }
+
+.home {
+    width: 940px;
+    margin: 30px 0 10px 20px;
+}
+
+.home h1{
+    margin: 30px 0;
+    font-size: 40px;
+    font-weight: bold;
+}
+
+.home h2{
+    margin: 10px 0;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.home p{
+    font-size: 20px;
+    line-height: 1.2;
+}
+
+.home img {
+    width: 38%;
+    margin: 8px 10px 5px 6px;
+    float: left;
+}
+
+.home h3{
+    margin: 3px 0;
+    font-size: 22px;
+    font-weight: bold;
+}

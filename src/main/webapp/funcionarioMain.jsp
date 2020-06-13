@@ -22,7 +22,7 @@
                     <ul>
                         <li><a href="index.html">Home</a></li>
                         <li><a href="clienteMain.jsp">Clientes</a></li>
-                        <li><a href="funcionarioMain.jsp">Funcionarios</a></li>
+                        <li><a href="funcionarioMain.jsp">Funcionários</a></li>
                         <li><a href="produtosMain.jsp">Produtos</a></li>
                         <li><a href="ListarClientesVenda">Venda</a></li>
                     </ul>
@@ -32,15 +32,15 @@
         <main class="opcoes">
 
             <ul class="menu">
-                <h1>Menu Funcionarios</h1>
-                <a href="cadastroFuncionario.jsp">
+                <h1>Menu Funcionários</h1>
+                <a href="CadastroFuncionario.jsp">
                     <li><h2>Cadastrar Funcionário</h2><img src="NewCliente.png"></li>
                 </a>
                 <a href="ListarFuncionarios">
-                    <li><h2>Lista Funcionarios</h2><img src="lista.png"></li>
+                    <li><h2>Lista Funcionários</h2><img src="lista.png"></li>
                 </a>
                 <a href="deletarFuncionario.jsp">
-                    <li><h2>Deletar Funcionario</h2><img src="lixo.png"></li>
+                    <li><h2>Deletar Funcionário</h2><img src="lixo.png"></li>
                 </a>
             </ul>
 
