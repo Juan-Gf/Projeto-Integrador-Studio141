@@ -44,6 +44,7 @@ public class VendaIniciarServlet extends HttpServlet{
 
 
         Pedido pedido = new Pedido(idCli, idFunc, 0, data, filial, pagamento, idProd, quantidade);
+        
         boolean ok = PedidoDAO.cadastrarPedido(pedido);
         PrintWriter out = response.getWriter();
 

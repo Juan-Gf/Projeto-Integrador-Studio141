@@ -40,8 +40,9 @@ public class CadastroProdutoServlet extends HttpServlet {
         String quantidade = request.getParameter("quantidade");
         String preco = request.getParameter("preco");
         String id = request.getParameter("id");
+        String filial = request.getParameter("filial");
 
-        Produto produto = new Produto(id, nome, categoria, tipo, descricao, quantidade, preco);
+        Produto produto = new Produto(id, nome, categoria, tipo, descricao, quantidade, preco, filial);
         boolean ok = ProdutoDAO.cadastrarProduto(produto);
         PrintWriter out = response.getWriter();
 
