@@ -37,14 +37,14 @@
                 <label>Nome</label>
                 <input type="text" name="nome" class="input-padrao"
                 value="<c:out value="${cliente.nome}" />"
-                pattern="[A-Za-záàâãéèêíïóôõöúçñÁÀÂÃÉÈÍÏÓÔÕÖÚÇÑ ]+$">
+                pattern="[A-Za-zcáàâãéèêíïóôõöúçñÁÀÂÃÉÈÍÏÓÔÕÖÚÇÑ ]+$">
 
                 <label>Email</label>
                 <input type="email" name="email" class="input-padrao" 
                 value="<c:out value="${cliente.email}" />">
 
                 <label>Cpf</label>
-                <input type="numbers" name="cpf" class="input-padrao"
+                <input type="numbers" name="cpf" class="input-padrao" disabled
                 value="<c:out value="${cliente.cpf}" />" pattern="[0-9]+$">
 
                 <label>Tipo de Pessoa</label>
@@ -61,7 +61,8 @@
                 <input type="date" nome="nascimento" required size="11" 
                 class="input-padrao" value="<c:out value="${cliente.nascimento}" />">
                 
-                <input type="numbers" nome="id" value="<c:out value="${cliente.id}" />">
+                <input type="numbers" nome="id" class="input-padrao" disabled
+                value="<c:out value="${cliente.id}" />">
 
                 <button type="submit" class="enviar">Gravar dados</button>
             </form>

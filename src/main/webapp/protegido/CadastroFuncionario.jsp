@@ -58,7 +58,7 @@
                 
                 <label>Filial</label>
                 <select name="codFilial" >
-                    <option>Matriz</option>
+                    <option>Matriz - São Pualo</option>
                     <option>Campina Grande</option>
                     <option>Joinville</option>
                     <option>Brasília</option>

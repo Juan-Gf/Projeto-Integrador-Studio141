@@ -10,26 +10,28 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>JSP Page</title>
+        <link rel="stylesheet" href="reset.css">
+        <link rel="stylesheet" href="styleLogin.css">
     </head>
     <body>
-        <form method="post" action="LoginServlet">
+        <header>
+
+        </header>
+        <main>
+            <img src="Logo-Studio.png" alt="Logo Studio" class="logo">
+            
+            <form method="post" action="LoginServlet">
             <h2 style="color: red"><c:out value="${msgErro}"/></h2>
 
-            <table>
-                <tr>
-                    <th>Login: </th>
-                    <td><input type="text" name="usuario"/></td>
-                </tr>
-                <tr>
-                    <th>Senha: </th>
-                    <td><input type="password" name="senha" /></td>
-                </tr>
-                <tr>
-                    <td colspan="2"> 
-                        <input type="submit" name="btnLogin" value="Entrar"/>
-                    </td>
-                </tr>
-            </table>
-        </form>
+            <label>Login</label>
+            <input type="text" name="usuario" class="input-padrao">
+            
+            <label>Senha</label>
+            <input type="password" name="senha" class="input-padrao">
+            <br> <br>
+            <input type="submit" name="btnLogin" value="Entrar" class="enviar" >
+
+            </form>
+        </main>
     </body>
 </html>

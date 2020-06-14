@@ -37,7 +37,7 @@
                     <li><h2>Cadastrar Funcionário</h2><img src="NewCliente.png"></li>
                 </a>
                 <a href="ListarFuncionarios">
-                    <li><h2>Lista Funcionários</h2><img src="lista.png"></li>
+                    <li><h2>Lista de Funcionário</h2><img src="lista.png"></li>
                 </a>
                 <a href="deletarFuncionario.jsp">
                     <li><h2>Deletar Funcionário</h2><img src="lixo.png"></li>

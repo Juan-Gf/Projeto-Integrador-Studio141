@@ -14,34 +14,50 @@
         <link rel="stylesheet" href="style.css">
     </head>
     <body>
-        <form action="CadastroUsuarioServlet" method="POST">
+        <header>
+            <div class="caixa">
+                <img src="Logo-Studio.png" alt="Logo Studio" class="logo">
+                <nav>
+                    <ul>
+                        <li><a href="index.html">Voltar</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </header>
 
-            <label>Nome</label>
-            <input type="text" name="nome" class="input-padrao" required="required"
-                   pattern="[A-Za-záàâãéèêíïóôõöúçñÁÀÂÃÉÈÍÏÓÔÕÖÚÇÑ ]+$"> 
+        <main>
+            <h1>Registro de Login</h1>
+            <form action="CadastroUsuarioServlet" method="POST">
 
-            <label>Usuario</label>
-            <input type="text" name="usuario" class="input-padrao"  
-                   placeholder="usuario" required="required"> 
+                <label>Nome</label>
+                <input type="text" name="nome" class="input-padrao" required="required"
+                       pattern="[A-Za-záàâãéèêíïóôõöúçñÁÀÂÃÉÈÍÏÓÔÕÖÚÇÑ ]+$"> 
 
-            <label>Senha</label>
-            <input type="numbers" name="senha" class="input-padrao" 
-                   placeholder="*******" required="required"> 
+                <label>Usuario</label>
+                <input type="text" name="usuario" class="input-padrao"  
+                       placeholder="usuario" required="required"> 
 
-            <label>Perfil</label>
-            <select name="perfil" >
-                <option>admin</option>
-                <option>vendedor</option>
-            </select>
+                <label>Senha</label>
+                <input type="numbers" name="senha" class="input-padrao" 
+                       placeholder="*******" required="required"> 
 
-            <label>isAdmin</label>
-            <select name="isAdmin" >
-                <option>true</option>
-                <option>false</option>
-            </select>
+                <label>Perfil</label>
+                <select name="perfil" >
+                    <option>Admin</option>
+                    <option>Vendedor</option>
+                </select>
 
+                <label>Admin</label>
+                <select name="isAdmin" >
+                    <option>True</option>
+                    <option>False</option>
+                </select>
 
-            <button type="submit" class="enviar">Salvar dados</button>
-        </form>
+                <button type="submit" class="enviar">Salvar dados</button>
+            </form>
+        </main>
+        <footer>
+            <img src="Logo-Studio.png" alt="Logo Studio" class="logo">
+        </footer>
     </body>
 </html>
