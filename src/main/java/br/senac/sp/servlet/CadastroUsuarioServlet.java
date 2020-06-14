@@ -5,10 +5,8 @@
  */
 package br.senac.sp.servlet;
 
-import br.senac.sp.dao.ClienteDAO;
-import br.senac.sp.dao.ProdutoDAO;
-import br.senac.sp.entidade.Cliente;
-import br.senac.sp.entidade.Produto;
+import br.senac.sp.dao.UsuarioSistemaDAO;
+import br.senac.sp.entidade.UsuarioSistema;
 import java.io.IOException;
 import java.io.PrintWriter;
 import javax.servlet.RequestDispatcher;
@@ -21,28 +19,34 @@ import javax.servlet.http.HttpServletResponse;
  *
  * @author DiogoSouza
  */
-public class CadastroProdutoServlet extends HttpServlet {
-
+public class CadastroUsuarioServlet extends HttpServlet{
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         //Empty
     }
 
+   
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
 
         String nome = request.getParameter("nome");
-        String categoria = request.getParameter("categoria");
-        String tipo = request.getParameter("tipo");
-        String descricao = request.getParameter("descricao");
-        String quantidade = request.getParameter("quantidade");
-        String preco = request.getParameter("preco");
-        String id = request.getParameter("id");
-
-        Produto produto = new Produto(id, nome, categoria, tipo, descricao, quantidade, preco);
-        boolean ok = ProdutoDAO.cadastrarProduto(produto);
+        String usuario = request.getParameter("usuario");
+        String senha = request.getParameter("senha");
+        String perfil = request.getParameter("perfil");
+        String isAdmin = request.getParameter("isAdmin");
+        boolean isAdminBoolean;
+        if(isAdmin.equals("true")){
+            isAdminBoolean = true;
+        }else{
+            isAdminBoolean = false;
+        }
+        
+        UsuarioSistema usuariosistema = new UsuarioSistema(nome,usuario,senha,perfil,isAdminBoolean);
+        String user2=usuariosistema.encodeSenha(senha);
+        UsuarioSistema usuariosistema2 = new UsuarioSistema(nome,usuario,user2,perfil,isAdminBoolean);
+        boolean ok = UsuarioSistemaDAO.cadastrarUsuario(usuariosistema2);
         PrintWriter out = response.getWriter();
 
         String url = "";
@@ -53,7 +57,8 @@ public class CadastroProdutoServlet extends HttpServlet {
             url = "/protegido/erro.jsp";
         }
         RequestDispatcher dispatcher = getServletContext().getRequestDispatcher(url);
-        dispatcher.forward(request, response);
+            dispatcher.forward(request,response);
+       
 
     }
 

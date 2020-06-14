@@ -54,7 +54,7 @@ public class ListarClienteComCPF extends HttpServlet {
         request.setAttribute("pedidos", pedidos);
         
 
-        RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/listarPedidos.jsp");
+        RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/protegido/listarPedidos.jsp");
         dispatcher.forward(request, response);
 
         //processRequest(request, response);
@@ -78,7 +78,7 @@ public class ListarClienteComCPF extends HttpServlet {
         List<Pedido> pedidos = PedidoDAO.buscaPorCPF(cpf);
         request.setAttribute("pedidos", pedidos);
 
-        RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/listarPedidos.jsp");
+        RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/protegido/listarPedidos.jsp");
         dispatcher.forward(request, response);
 
         //processRequest(request, response);

@@ -43,7 +43,7 @@ public class ListarClientesVenda extends HttpServlet {
         request.setAttribute("clientes", clientes);
         
 
-        RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/vendaIniciar.jsp");
+        RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/protegido/vendaIniciar.jsp");
         dispatcher.forward(request, response);
     }
 

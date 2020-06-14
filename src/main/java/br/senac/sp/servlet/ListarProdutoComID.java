@@ -45,7 +45,7 @@ public class ListarProdutoComID extends HttpServlet {
         List<Pedido> pedidos = PedidoDAO.buscaPorIDProd(id);
         request.setAttribute("pedidos", pedidos);
 
-        RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/listarPedidos.jsp");
+        RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/protegido/listarPedidos.jsp");
         dispatcher.forward(request, response);
 
         //processRequest(request, response);

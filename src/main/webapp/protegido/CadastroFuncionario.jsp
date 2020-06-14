@@ -65,6 +65,7 @@
                 </select> 
                  
                 <button type="submit" class="enviar">Salvar dados</button>
+            </form>
         </main>
      
         <footer>

@@ -28,7 +28,7 @@ public class ListarProdutosVenda extends HttpServlet{
         request.setAttribute("produtos", produtos);
         
         
-        RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/vendaCarrinho.jsp");
+        RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/protegido/vendaCarrinho.jsp");
         dispatcher.forward(request,response);
     }
     

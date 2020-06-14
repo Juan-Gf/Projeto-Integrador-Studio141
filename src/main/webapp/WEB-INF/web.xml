@@ -1,5 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <web-app version="3.1" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd">
+    <filter>
+        <filter-name>AutorizacaoFilter</filter-name>
+        <filter-class>br.senac.sp.filtro.AutorizacaoFilter</filter-class>
+    </filter>
+    <filter-mapping>
+        <filter-name>AutorizacaoFilter</filter-name>
+        <url-pattern>/protegido/*</url-pattern>
+    </filter-mapping>
     <servlet>
         <servlet-name>CadastroClienteServlet</servlet-name>
         <servlet-class>br.senac.sp.servlet.CadastroClienteServlet</servlet-class>
@@ -10,11 +18,11 @@
     </servlet>
     <servlet-mapping>
         <servlet-name>CadastroClienteServlet</servlet-name>
-        <url-pattern>/CadastroClienteServlet</url-pattern>
+        <url-pattern>/protegido/CadastroClienteServlet</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
         <servlet-name>ListarClientes</servlet-name>
-        <url-pattern>/ListarClientes</url-pattern>
+        <url-pattern>/protegido/ListarClientes</url-pattern>
     </servlet-mapping>
     <servlet>
         <servlet-name>CadastroFuncionarioServlet</servlet-name>
@@ -22,7 +30,7 @@
     </servlet>
     <servlet-mapping>
         <servlet-name>CadastroFuncionarioServlet</servlet-name>
-        <url-pattern>/CadastroFuncionarioServlet</url-pattern>
+        <url-pattern>/protegido/CadastroFuncionarioServlet</url-pattern>
     </servlet-mapping>
     <servlet>
         <servlet-name>DeletarClienteServlet</servlet-name>
@@ -30,7 +38,7 @@
     </servlet>
     <servlet-mapping>
         <servlet-name>DeletarClienteServlet</servlet-name>
-        <url-pattern>/DeletarClienteServlet</url-pattern>
+        <url-pattern>/protegido/DeletarClienteServlet</url-pattern>
     </servlet-mapping>
     <servlet>
         <servlet-name>AlterarClientes</servlet-name>
@@ -38,7 +46,7 @@
     </servlet>
     <servlet-mapping>
         <servlet-name>AlterarClientes</servlet-name>
-        <url-pattern>/AlterarClientes</url-pattern>
+        <url-pattern>/protegido/AlterarClientes</url-pattern>
     </servlet-mapping>
     <servlet>
         <servlet-name>ListarFuncionarios</servlet-name>
@@ -46,7 +54,7 @@
     </servlet>
     <servlet-mapping>
         <servlet-name>ListarFuncionarios</servlet-name>
-        <url-pattern>/ListarFuncionarios</url-pattern>
+        <url-pattern>/protegido/ListarFuncionarios</url-pattern>
     </servlet-mapping>
     <servlet>
         <servlet-name>DeletarFuncionarioServlet</servlet-name>
@@ -54,7 +62,7 @@
     </servlet>
     <servlet-mapping>
         <servlet-name>DeletarFuncionarioServlet</servlet-name>
-        <url-pattern>/DeletarFuncionarioServlet</url-pattern>
+        <url-pattern>/protegido/DeletarFuncionarioServlet</url-pattern>
     </servlet-mapping>
     <servlet>
         <servlet-name>CadastroProdutoServlet</servlet-name>
@@ -62,7 +70,7 @@
     </servlet>
     <servlet-mapping>
         <servlet-name>CadastroProdutoServlet</servlet-name>
-        <url-pattern>/CadastroProdutoServlet</url-pattern>
+        <url-pattern>/protegido/CadastroProdutoServlet</url-pattern>
     </servlet-mapping>
     <servlet>
         <servlet-name>ListarProdutos</servlet-name>
@@ -70,7 +78,7 @@
     </servlet>
     <servlet-mapping>
         <servlet-name>ListarProdutos</servlet-name>
-        <url-pattern>/ListarProdutos</url-pattern>
+        <url-pattern>/protegido/ListarProdutos</url-pattern>
     </servlet-mapping>
     <servlet>
         <servlet-name>DeletarProdutoServlet</servlet-name>
@@ -78,7 +86,7 @@
     </servlet>
     <servlet-mapping>
         <servlet-name>DeletarProdutoServlet</servlet-name>
-        <url-pattern>/DeletarProdutoServlet</url-pattern>
+        <url-pattern>/protegido/DeletarProdutoServlet</url-pattern>
     </servlet-mapping>
     
     <servlet>
@@ -87,7 +95,7 @@
     </servlet>
     <servlet-mapping>
         <servlet-name>AlterarCliente2</servlet-name>
-        <url-pattern>/AlterarCliente2</url-pattern>
+        <url-pattern>/protegido/AlterarCliente2</url-pattern>
     </servlet-mapping>
     
     <servlet>
@@ -96,7 +104,7 @@
     </servlet>
     <servlet-mapping>
         <servlet-name>ListarClientesVenda</servlet-name>
-        <url-pattern>/ListarClientesVenda</url-pattern>
+        <url-pattern>/protegido/ListarClientesVenda</url-pattern>
     </servlet-mapping>
     
     <servlet>
@@ -105,7 +113,7 @@
     </servlet>
     <servlet-mapping>
         <servlet-name>ListarProdutosVenda</servlet-name>
-        <url-pattern>/ListarProdutosVenda</url-pattern>
+        <url-pattern>/protegido/ListarProdutosVenda</url-pattern>
     </servlet-mapping>
     
     <servlet>
@@ -114,7 +122,7 @@
     </servlet>
     <servlet-mapping>
         <servlet-name>VendaIniciarServlet</servlet-name>
-        <url-pattern>/VendaIniciarServlet</url-pattern>
+        <url-pattern>/protegido/VendaIniciarServlet</url-pattern>
     </servlet-mapping>
     
     <servlet>
@@ -123,7 +131,7 @@
     </servlet>
     <servlet-mapping>
         <servlet-name>ListarClienteComCPF</servlet-name>
-        <url-pattern>/ListarClienteComCPF</url-pattern>
+        <url-pattern>/protegido/ListarClienteComCPF</url-pattern>
     </servlet-mapping>
     
     <servlet>
@@ -132,7 +140,7 @@
     </servlet>
     <servlet-mapping>
         <servlet-name>ListarFuncionarioComID</servlet-name>
-        <url-pattern>/ListarFuncionarioComID</url-pattern>
+        <url-pattern>/protegido/ListarFuncionarioComID</url-pattern>
     </servlet-mapping>
     
     <servlet>
@@ -141,12 +149,33 @@
     </servlet>
     <servlet-mapping>
         <servlet-name>ListarProdutoComID</servlet-name>
-        <url-pattern>/ListarProdutoComID</url-pattern>
+        <url-pattern>/protegido/ListarProdutoComID</url-pattern>
+    </servlet-mapping>
+    
+    <servlet>
+        <servlet-name>CadastroUsuarioServlet</servlet-name>
+        <servlet-class>br.senac.sp.servlet.CadastroUsuarioServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>CadastroUsuarioServlet</servlet-name>
+        <url-pattern>/protegido/CadastroUsuarioServlet</url-pattern>
+    </servlet-mapping>
+    
+    <servlet>
+        <servlet-name>LoginServlet</servlet-name>
+        <servlet-class>br.senac.sp.servlet.LoginServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>LoginServlet</servlet-name>
+        <url-pattern>/LoginServlet</url-pattern>
     </servlet-mapping>
     
     <session-config>
         <session-timeout>
-            30
+            300
         </session-timeout>
     </session-config>
+    <welcome-file-list>
+        <welcome-file>protegido/indexjsp.jsp</welcome-file>
+    </welcome-file-list>
 </web-app>

@@ -28,7 +28,7 @@ public class ListarFuncionarios extends HttpServlet {
         List<Funcionario> funcionarios = FuncionarioDAO.listarFuncionarios();
         request.setAttribute("funcionarios", funcionarios);
         
-        RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/listarFuncionarios.jsp");
+        RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/protegido/listarFuncionarios.jsp");
         dispatcher.forward(request,response);
     }
     
