@@ -123,8 +123,8 @@ public class ClienteDAO {
             String sql = "update cliente set"
                     + " nome=?,"
                     + " email=?,"
-                    + " cpf=?, "
-                    + "tipoPessoa=?,"
+                    + " cpf=?,"
+                    + " tipoPessoa=?,"
                     + " celular=?,"
                     + " nascimento=? "
                     + "where id=?";

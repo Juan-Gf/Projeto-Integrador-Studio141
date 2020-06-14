@@ -93,9 +93,9 @@ public class AlterarClientes extends HttpServlet {
         String url = "";
         if (ok) {
             request.setAttribute("cadastroOK", true);
-            url = "/sucesso.jsp";
+            url = "/protegido/sucesso.jsp";
         } else {
-            url = "/erro.jsp";
+            url = "/protegido/erro.jsp";
         }
         RequestDispatcher dispatcher = getServletContext().getRequestDispatcher(url);
             dispatcher.forward(request,response);

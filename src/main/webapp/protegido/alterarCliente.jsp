@@ -33,7 +33,7 @@
 
             <h1>Editar Dados</h1>
             <form action="AlterarClientes" method="POST">
-
+                
                 <label>Nome</label>
                 <input type="text" name="nome" class="input-padrao"
                 value="<c:out value="${cliente.nome}" />"
@@ -60,6 +60,8 @@
                 <label>Nascimento</label>
                 <input type="date" nome="nascimento" required size="11" 
                 class="input-padrao" value="<c:out value="${cliente.nascimento}" />">
+                
+                <input type="numbers" nome="id" value="<c:out value="${cliente.id}" />">
 
                 <button type="submit" class="enviar">Gravar dados</button>
             </form>
