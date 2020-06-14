@@ -70,4 +70,5 @@
             <img src="Logo-Studio.png" alt="Logo Studio" class="logo">
         </footer>
     </body>
+    
 </html>
