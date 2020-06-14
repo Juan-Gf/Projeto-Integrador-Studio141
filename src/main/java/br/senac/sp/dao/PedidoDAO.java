@@ -130,7 +130,7 @@ public class PedidoDAO {
     }
 
     public static List<Pedido> buscaPorIDProd(String id) {
-                List<Pedido> pedidos = new ArrayList<>();
+        List<Pedido> pedidos = new ArrayList<>();
         boolean ok = false;
         Connection con;
         try {
@@ -168,6 +168,57 @@ public class PedidoDAO {
             Logger.getLogger(ClienteDAO.class.getName()).log(Level.SEVERE, null, ex);
         }
         return pedidos;
+    }
+
+    public static boolean reduzirEstoque(Pedido pedido) {
+        boolean ok = false;
+        Connection con;
+        try {
+            con = ConexaoDB.getConexao();
+            String sql = "update produto set quantidade = quantidade - ? where id = ?;";
+            PreparedStatement ps = con.prepareStatement(sql);
+
+            ps.setString(1, pedido.getQuantidade());
+            ps.setString(2, pedido.getCodProd());
+
+            ps.executeUpdate();
+
+            ok = true;
+        } catch (SQLException ex) {
+            Logger.getLogger(PedidoDAO.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return ok;
+    }
+
+    public static double somaValorTotal(String idProd, String quantidade) {
+        boolean ok = false;
+        Connection con;
+        String preco="";
+        try {
+            con = ConexaoDB.getConexao();
+
+            String sql = "select preco from produto where id = ?;";
+            PreparedStatement ps = con.prepareStatement(sql);
+            ps.setString(1, idProd);
+            ResultSet rs = ps.executeQuery();
+            while (rs.next()) {
+                String precoBD = rs.getString("preco");
+                preco = precoBD;
+            }
+
+            ps.executeUpdate();
+
+            ok = true;
+        } catch (SQLException ex) {
+            Logger.getLogger(PedidoDAO.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        
+        double convPreco = Double.parseDouble(preco);
+        double convQuantidade = Double.parseDouble(quantidade);
+        
+        double resultado=convPreco*convQuantidade;
+        
+        return resultado;
     }
 
 }
