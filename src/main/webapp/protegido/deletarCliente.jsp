@@ -9,7 +9,7 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>Deletar Cliente</title>
+        <title>Del. Cliente</title>
         <link rel="stylesheet" href="reset.css">
         <link rel="stylesheet" href="style.css">
     </head>

@@ -26,7 +26,7 @@
             </div>
         </header>
         <main>
-            <h1>Realize sua venda!</h1>
+            <h1>Realize sua venda</h1>
             <form method="POST" action="VendaIniciarServlet">
                 <label>ID Cliente</label>
                 <input type="numbers" name="idCli" pattern="[0-9]+$"
@@ -40,10 +40,19 @@
                 <input type="date" name="data" class="input-padrao">
                 
                 <label>Filial</label>
-                <input type="text" name="filial" class="input-padrao">
+                <select name="filial" >
+                    <option>Matriz - São Pualo</option>
+                    <option>Campina Grande</option>
+                    <option>Joinville</option>
+                    <option>Brasília</option>
+                </select> 
                 
                 <label>Forma Pagamento</label>
-                <input type="text" name="pagamento" class="input-padrao">
+                <select name="pagamento" >
+                    <option>Boleto - Á vista</option>
+                    <option>Cartão Debito</option>
+                    <option>Cartão Credito</option>
+                </select> 
                 
                 <label>ID Produto</label>
                 <input type="text" name="idProd" class="input-padrao">

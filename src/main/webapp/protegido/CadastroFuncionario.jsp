@@ -9,7 +9,7 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>JSP Page</title>
+        <title>Cad. Funcionario</title>
         <link rel="stylesheet" href="reset.css">
         <link rel="stylesheet" href="style.css">
     </head>
@@ -27,7 +27,7 @@
             </div>
         </header>
         <main>
-            <h1>Cadastrar Funcionários</h1>
+            <h1>Cadastrar Funcionário</h1>
             <form action="CadastroFuncionarioServlet" method="POST">
                 <label>Nome</label>
                 <input type="text" name="nome" class="input-padrao" required="required"
