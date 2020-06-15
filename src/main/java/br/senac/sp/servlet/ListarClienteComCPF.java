@@ -6,9 +6,9 @@
 package br.senac.sp.servlet;
 
 import br.senac.sp.dao.ClienteDAO;
-import br.senac.sp.dao.ProdutoDAO;
+import br.senac.sp.dao.PedidoDAO;
 import br.senac.sp.entidade.Cliente;
-import br.senac.sp.entidade.Produto;
+import br.senac.sp.entidade.Pedido;
 import java.io.IOException;
 import java.util.List;
 import javax.servlet.RequestDispatcher;
@@ -21,30 +21,19 @@ import javax.servlet.http.HttpServletResponse;
  *
  * @author DiogoSouza
  */
-public class ListarClientesVenda extends HttpServlet {
+public class ListarClienteComCPF extends HttpServlet {
 
-    /**
-     * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
-     * methods.
-     *
-     * @param request servlet request
-     * @param response servlet response
-     * @throws ServletException if a servlet-specific error occurs
-     * @throws IOException if an I/O error occurs
-     */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        response.setContentType("text/html;charset=UTF-8");
+                String cpf = request.getParameter("cpf");
+        List<Pedido> pedidos = PedidoDAO.buscaPorCPF(cpf);
+        request.setAttribute("pedidos", pedidos);
 
-        List<Produto> produtos = ProdutoDAO.listarProdutos();
-        List<Cliente> clientes = ClienteDAO.listarClientes();
-        
-        request.setAttribute("produtos", produtos);
-        request.setAttribute("clientes", clientes);
-        
-
-        RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/protegido/vendaIniciar.jsp");
+        RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/listarPedidos.jsp");
         dispatcher.forward(request, response);
+
+       processRequest(request, response);
+
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
@@ -59,7 +48,18 @@ public class ListarClientesVenda extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
+
+        String cpf = request.getParameter("cpf");
+        List<Pedido> pedidos = PedidoDAO.buscaPorCPF(cpf);
+        request.setAttribute("pedidos", pedidos);
+        
+
+        RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/protegido/listarPedidos.jsp");
+        dispatcher.forward(request, response);
+
+        //processRequest(request, response);
         processRequest(request, response);
+
     }
 
     /**
@@ -73,7 +73,15 @@ public class ListarClientesVenda extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        processRequest(request, response);
+
+        String cpf = request.getParameter("cpf");
+        List<Pedido> pedidos = PedidoDAO.buscaPorCPF(cpf);
+        request.setAttribute("pedidos", pedidos);
+
+        RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/protegido/listarPedidos.jsp");
+        dispatcher.forward(request, response);
+
+        //processRequest(request, response);
     }
 
     /**

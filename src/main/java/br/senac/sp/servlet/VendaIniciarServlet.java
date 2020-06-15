@@ -40,19 +40,21 @@ public class VendaIniciarServlet extends HttpServlet{
         String pagamento = request.getParameter("pagamento");
         String idProd = request.getParameter("idProd");
         String quantidade = request.getParameter("quantiade");
+        double valorTotal = PedidoDAO.somaValorTotal(idProd, quantidade);
+
+
+        Pedido pedido = new Pedido(idCli, idFunc, valorTotal, data, filial, pagamento, idProd, quantidade);
         
-
-
-        Pedido pedido = new Pedido(idCli, idFunc, 0, data, filial, pagamento, idProd, quantidade);
         boolean ok = PedidoDAO.cadastrarPedido(pedido);
+        boolean ok2 = PedidoDAO.reduzirEstoque(pedido);
         PrintWriter out = response.getWriter();
 
         String url = "";
         if (ok) {
             request.setAttribute("cadastroOK", true);
-            url = "/sucesso.jsp";
+            url = "/protegido/sucesso.jsp";
         } else {
-            url = "/erro.jsp";
+            url = "/protegido/erro.jsp";
         }
         RequestDispatcher dispatcher = getServletContext().getRequestDispatcher(url);
             dispatcher.forward(request,response);

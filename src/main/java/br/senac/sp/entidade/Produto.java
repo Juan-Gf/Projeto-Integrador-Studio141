@@ -17,8 +17,9 @@ public class Produto {
     private String descricao;
     private String quantidade;
     private String preco;
+    private String filial;
 
-    public Produto(String id, String nome, String categoria, String tipo, String descricao, String quantidade, String preco) {
+    public Produto(String id, String nome, String categoria, String tipo, String descricao, String quantidade, String preco, String filial) {
         this.id = id;
         this.nome = nome;
         this.categoria = categoria;
@@ -26,6 +27,7 @@ public class Produto {
         this.descricao = descricao;
         this.quantidade = quantidade;
         this.preco = preco;
+        this.filial = filial;
     }
 
     public String getId() {
@@ -83,6 +85,16 @@ public class Produto {
     public void setPreco(String preco) {
         this.preco = preco;
     }
+
+    public String getFilial() {
+        return filial;
+    }
+
+    public void setFilial(String filial) {
+        this.filial = filial;
+    }
+    
+    
     
     
 }

@@ -49,6 +49,7 @@ nav a:hover{
 }
 
 main {
+    background: white;
     width: 940px;
     margin: 0 auto;
 }

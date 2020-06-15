@@ -1,3 +1,10 @@
+<%-- 
+    Document   : index
+    Created on : 14 de jun de 2020, 12:33:34
+    Author     : DiogoSouza
+--%>
+
+<%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
     <head>
@@ -18,10 +25,18 @@
                         <li><a href="funcionarioMain.jsp">Funcionarios</a></li>
                         <li><a href="produtosMain.jsp"> Produtos</a></li>
                         <li><a href="ListarClientesVenda">Venda</a></li>
+                        <c:if test="${sessionScope.usuario.isAdmin}">
+                        <li><a href="relatoriosMain.jsp">Relatórios</a></li>
+                        </c:if>
+                        <li><a href="cadastroUsuario.jsp">Cadastrar Usuario</a></li>
                     </ul>
                 </nav>
             </div>
+            
         </header>
+
+        
+        <p>Bem vindo, ${sessionScope.usuario.nome}</p> 
         <main class="home">
             
             <h1>Quem somos</h1>

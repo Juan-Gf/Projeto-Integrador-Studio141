@@ -1,0 +1,57 @@
+
+html{
+    height: 100%;
+}
+
+.logo {
+    width: 70%;
+    margin-top: 30px;
+    text-align: center;
+}
+
+body {
+    background: black;
+    height: 100%;
+}
+
+
+main {
+    width: 940px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+form {
+    text-align: center;
+    margin: 50px 0;
+}
+form label {
+    text-align: center;
+    color: white;
+    display: block;
+    font-size: 23px;
+    margin: 0 0 10px;
+}
+
+.input-padrao, form textarea, button{
+    text-align-last: center;
+    margin: 0 0 20px;
+    padding: 8px 3px;
+    width: 30%;
+}
+
+.enviar {
+    width: 20%;
+    background: white;
+    padding: 15px 0;
+    color: black;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+    border: none;
+    border-radius: 5px;
+}
+.enviar:hover {
+    background: #CCCCCC;
+}
+

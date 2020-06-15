@@ -29,14 +29,15 @@ public class ProdutoDAO {
         Connection con;
         try {
             con = ConexaoDB.getConexao();
-            String sql = "insert into produto values (default,?,?,?,?,?,?)";
+            String sql = "insert into produto values (default,?,?,?,?,?,?,?)";
             PreparedStatement ps = con.prepareStatement(sql);
             ps.setString(1, produto.getNome());
             ps.setString(2, produto.getCategoria());
             ps.setString(3, produto.getTipo());
             ps.setString(4, produto.getDescricao());
             ps.setString(5, produto.getQuantidade());
-            ps.setString(6, produto.getPreco());
+            ps.setString(6, produto.getPreco().replace(',', '.'));
+            ps.setString(7, produto.getFilial());
             ps.execute();
 
             ok = true;
@@ -65,8 +66,9 @@ public class ProdutoDAO {
                 String descricao = rs.getString("descricao");
                 String quantidade = rs.getString("quantidade");
                 String preco = rs.getString("preco");
+                String filial = rs.getString("filial");
 
-                produtos.add(new Produto(id, nome, categoria, tipo, descricao, quantidade, preco));
+                produtos.add(new Produto(id, nome, categoria, tipo, descricao, quantidade, preco, filial));
             }
         } catch (SQLException ex) {
             Logger.getLogger(FuncionarioDAO.class

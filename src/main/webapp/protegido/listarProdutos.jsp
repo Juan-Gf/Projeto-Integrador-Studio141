@@ -40,6 +40,7 @@
                 <th>Descrição</th>
                 <th>Quantidade</th>
                 <th>Preço</th>
+                <th>Filial</th>
                 <th>Alterar</th>
                 <c:forEach var="c" items="${produtos}">
             <thead>
@@ -51,6 +52,7 @@
                     <td>${c.descricao}</td>
                     <td>${c.quantidade}</td>
                     <td>${c.preco}</td>
+                    <th>${c.filial}</th>
                     <td></c:forEach></td>
         </tbody>
         </table>

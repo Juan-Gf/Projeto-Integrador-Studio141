@@ -24,7 +24,7 @@
                         <li><a href="clienteMain.jsp">Clientes</a></li>
                         <li><a href="funcionarioMain.jsp">Funcionarios</a></li>
                         <li><a href="produtosMain.jsp">Produtos</a></li>
-                        <li><a href="ListarClientesVenda">Venda</a></li>
+                        <li><a href="ListarClientes">Venda</a></li>
                     </ul>
                 </nav>
             </div>
@@ -37,7 +37,7 @@
                     <li><h2>Cadastrar</h2><img src="NewCliente.png"></li>
                 </a>
                 <a href="ListarClientes">
-                    <li><h2>Lista Clientes</h2><img src="lista.png"></li>
+                    <li><h2>Lista dos Clientes</h2><img src="lista.png"></li>
                 </a>
                 <a href="deletarCliente.jsp">
                     <li><h2>Deletar</h2><img src="lixo.png"></li>
