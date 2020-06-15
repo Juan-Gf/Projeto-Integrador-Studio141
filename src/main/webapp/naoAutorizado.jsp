@@ -12,6 +12,8 @@
         <title>JSP Page</title>
     </head>
     <body>
-        <h1>Voce ão pode acessar</h1>
+        <main>
+            <h1>Voce ão pode acessar</h1>
+        </main>
     </body>
 </html>
